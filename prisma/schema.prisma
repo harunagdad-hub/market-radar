@@ -13,7 +13,6 @@ enum PriceSource {
   IMPORT
 }
 
-
 model Province {
   id        Int        @id @default(autoincrement())
   code      Int        @unique
@@ -24,62 +23,66 @@ model Province {
 }
 
 model District {
-  id            Int           @id @default(autoincrement())
+  id            Int            @id @default(autoincrement())
   provinceId    Int
   name          String
-  province      Province      @relation(fields: [provinceId], references: [id], onDelete: Cascade)
+  province      Province       @relation(fields: [provinceId], references: [id], onDelete: Cascade)
   neighborhoods Neighborhood[]
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
 
   @@unique([provinceId, name])
   @@index([provinceId])
 }
 
 model Neighborhood {
-  id          Int           @id @default(autoincrement())
-  districtId  Int
-  name        String
-  district    District      @relation(fields: [districtId], references: [id], onDelete: Cascade)
-  branches    MarketBranch[]
-  addresses   Address[]
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
+  id         Int            @id @default(autoincrement())
+  districtId Int
+  name       String
+  district   District       @relation(fields: [districtId], references: [id], onDelete: Cascade)
+  branches   MarketBranch[]
+  addresses  Address[]
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
 
   @@unique([districtId, name])
   @@index([districtId])
 }
 
 model MarketChain {
-  id        Int            @id @default(autoincrement())
-  name      String         @unique
-  slug      String         @unique
+  id        Int              @id @default(autoincrement())
+  name      String           @unique
+  slug      String           @unique
   logoUrl   String?
-  isActive  Boolean        @default(true)
+  isActive  Boolean          @default(true)
   branches  MarketBranch[]
-  createdAt DateTime       @default(now())
-  updatedAt DateTime       @updatedAt
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+  listings  ProductListing[]
 }
 
 model MarketBranch {
-  id          Int         @id @default(autoincrement())
-  chainId     Int
-  name        String
-  address     String
-  city        String
+  id             Int           @id @default(autoincrement())
+  chainId        Int
+  name           String
+  address        String
+  city           String
   district       String?
   neighborhoodId Int?
-  latitude       Float
-  longitude      Float
-  isActive       Boolean      @default(true)
-  chain          MarketChain  @relation(fields: [chainId], references: [id], onDelete: Cascade)
+  latitude       Float?
+  longitude      Float?
+  source         String?
+  sourceId       String?
+  isActive       Boolean       @default(true)
+  chain          MarketChain   @relation(fields: [chainId], references: [id], onDelete: Cascade)
   neighborhood   Neighborhood? @relation(fields: [neighborhoodId], references: [id], onDelete: SetNull)
   prices         Price[]
-  campaigns    Campaign[]
-  priceReports PriceReport[]
-  createdAt    DateTime    @default(now())
-  updatedAt    DateTime    @updatedAt
+  campaigns      Campaign[]
+  priceReports   PriceReport[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
 
+  @@unique([source, sourceId])
   @@index([chainId])
   @@index([city])
   @@index([neighborhoodId])
@@ -87,56 +90,76 @@ model MarketBranch {
 }
 
 model Product {
-  id          Int        @id @default(autoincrement())
-  name        String
-  barcode     String?    @unique
-  brand       String?
-  category    String?
-  unit        String?
-  imageUrl    String?
-  isActive    Boolean    @default(true)
-  prices      Price[]
-  campaigns   Campaign[]
-  favorites   Favorite[]
+  id           Int              @id @default(autoincrement())
+  name         String
+  barcode      String?          @unique
+  brand        String?
+  category     String?
+  unit         String?
+  imageUrl     String?
+  isActive     Boolean          @default(true)
+  campaigns    Campaign[]
+  favorites    Favorite[]
   priceReports PriceReport[]
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  listings     ProductListing[]
+  externalId   String?          @unique
 
   @@index([name])
   @@index([category])
 }
 
 model Price {
-  id          Int         @id @default(autoincrement())
-  productId   Int
-  branchId    Int
-  price       Decimal     @db.Decimal(10, 2)
-  oldPrice    Decimal?    @db.Decimal(10, 2)
-  source      PriceSource @default(IMPORT)
-  validFrom   DateTime    @default(now())
-  validUntil  DateTime?
-  product     Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
-  branch      MarketBranch @relation(fields: [branchId], references: [id], onDelete: Cascade)
-  createdAt   DateTime    @default(now())
+  id         Int            @id @default(autoincrement())
+  listingId  Int
+  branchId   Int
+  price      Decimal        @db.Decimal(10, 2)
+  oldPrice   Decimal?       @db.Decimal(10, 2)
+  source     PriceSource    @default(IMPORT)
+  validFrom  DateTime       @default(now())
+  validUntil DateTime?
+  listing    ProductListing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  branch     MarketBranch   @relation(fields: [branchId], references: [id], onDelete: Cascade)
+  createdAt  DateTime       @default(now())
 
-  @@index([productId])
   @@index([branchId])
-  @@index([productId, branchId])
+  @@index([listingId, branchId, validFrom(sort: Desc)])
+}
+
+model ProductListing {
+  id        Int         @id @default(autoincrement())
+  chainId   Int
+  sourceSku String
+  name      String
+  brand     String?
+  unit      String?
+  imageUrl  String?
+  productId Int?
+  chain     MarketChain @relation(fields: [chainId], references: [id], onDelete: Cascade)
+  product   Product?    @relation(fields: [productId], references: [id], onDelete: SetNull)
+  prices    Price[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@unique([chainId, sourceSku])
+  @@index([productId])
+  @@index([name])
 }
 
 model Campaign {
-  id          Int          @id @default(autoincrement())
+  id          Int           @id @default(autoincrement())
   productId   Int
   branchId    Int?
   title       String
   description String?
-  discount    Decimal?     @db.Decimal(5, 2)
+  discount    Decimal?      @db.Decimal(5, 2)
   startDate   DateTime
   endDate     DateTime
-  isActive    Boolean      @default(true)
-  product     Product      @relation(fields: [productId], references: [id], onDelete: Cascade)
+  isActive    Boolean       @default(true)
+  product     Product       @relation(fields: [productId], references: [id], onDelete: Cascade)
   branch      MarketBranch? @relation(fields: [branchId], references: [id], onDelete: Cascade)
-  createdAt   DateTime     @default(now())
+  createdAt   DateTime      @default(now())
 
   @@index([productId])
   @@index([branchId])
@@ -144,15 +167,15 @@ model Campaign {
 }
 
 model User {
-  id        Int        @id @default(autoincrement())
+  id        Int           @id @default(autoincrement())
   name      String?
-  email     String     @unique
+  email     String        @unique
   password  String?
   addresses Address[]
   favorites Favorite[]
   reports   PriceReport[]
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
 }
 
 model Address {
@@ -164,8 +187,8 @@ model Address {
   district       String?
   neighborhood   String?
   neighborhoodId Int?
-  latitude       Float
-  longitude      Float
+  latitude       Float?
+  longitude      Float?
   user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   location       Neighborhood? @relation(fields: [neighborhoodId], references: [id], onDelete: SetNull)
   createdAt      DateTime      @default(now())
@@ -176,29 +199,29 @@ model Address {
 }
 
 model Favorite {
-  id        Int         @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   userId    Int
   productId Int
-  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
-  product   Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
-  createdAt DateTime    @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
 
   @@unique([userId, productId])
   @@index([productId])
 }
 
 model PriceReport {
-  id          Int         @id @default(autoincrement())
-  userId      Int
-  productId   Int
-  branchId    Int
-  reportedPrice Decimal   @db.Decimal(10, 2)
-  note        String?
-  status      String      @default("PENDING")
-  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
-  product     Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
-  branch      MarketBranch @relation(fields: [branchId], references: [id], onDelete: Cascade)
-  createdAt   DateTime    @default(now())
+  id            Int          @id @default(autoincrement())
+  userId        Int
+  productId     Int
+  branchId      Int
+  reportedPrice Decimal      @db.Decimal(10, 2)
+  note          String?
+  status        String       @default("PENDING")
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product       Product      @relation(fields: [productId], references: [id], onDelete: Cascade)
+  branch        MarketBranch @relation(fields: [branchId], references: [id], onDelete: Cascade)
+  createdAt     DateTime     @default(now())
 
   @@index([productId])
   @@index([branchId])

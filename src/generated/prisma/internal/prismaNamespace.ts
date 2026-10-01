@@ -404,6 +404,7 @@ export const ModelName = {
   MarketBranch: 'MarketBranch',
   Product: 'Product',
   Price: 'Price',
+  ProductListing: 'ProductListing',
   Campaign: 'Campaign',
   User: 'User',
   Address: 'Address',
@@ -424,7 +425,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "province" | "district" | "neighborhood" | "marketChain" | "marketBranch" | "product" | "price" | "campaign" | "user" | "address" | "favorite" | "priceReport"
+    modelProps: "province" | "district" | "neighborhood" | "marketChain" | "marketBranch" | "product" | "price" | "productListing" | "campaign" | "user" | "address" | "favorite" | "priceReport"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -946,6 +947,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ProductListing: {
+      payload: Prisma.$ProductListingPayload<ExtArgs>
+      fields: Prisma.ProductListingFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ProductListingFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ProductListingFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload>
+        }
+        findFirst: {
+          args: Prisma.ProductListingFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ProductListingFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload>
+        }
+        findMany: {
+          args: Prisma.ProductListingFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload>[]
+        }
+        create: {
+          args: Prisma.ProductListingCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload>
+        }
+        createMany: {
+          args: Prisma.ProductListingCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ProductListingCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload>[]
+        }
+        delete: {
+          args: Prisma.ProductListingDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload>
+        }
+        update: {
+          args: Prisma.ProductListingUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload>
+        }
+        deleteMany: {
+          args: Prisma.ProductListingDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ProductListingUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ProductListingUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload>[]
+        }
+        upsert: {
+          args: Prisma.ProductListingUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProductListingPayload>
+        }
+        aggregate: {
+          args: Prisma.ProductListingAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateProductListing>
+        }
+        groupBy: {
+          args: Prisma.ProductListingGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProductListingGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ProductListingCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProductListingCountAggregateOutputType> | number
+        }
+      }
+    }
     Campaign: {
       payload: Prisma.$CampaignPayload<ExtArgs>
       fields: Prisma.CampaignFieldRefs
@@ -1411,6 +1486,8 @@ export const MarketBranchScalarFieldEnum = {
   neighborhoodId: 'neighborhoodId',
   latitude: 'latitude',
   longitude: 'longitude',
+  source: 'source',
+  sourceId: 'sourceId',
   isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -1429,7 +1506,8 @@ export const ProductScalarFieldEnum = {
   imageUrl: 'imageUrl',
   isActive: 'isActive',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  externalId: 'externalId'
 } as const
 
 export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
@@ -1437,7 +1515,7 @@ export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeo
 
 export const PriceScalarFieldEnum = {
   id: 'id',
-  productId: 'productId',
+  listingId: 'listingId',
   branchId: 'branchId',
   price: 'price',
   oldPrice: 'oldPrice',
@@ -1448,6 +1526,22 @@ export const PriceScalarFieldEnum = {
 } as const
 
 export type PriceScalarFieldEnum = (typeof PriceScalarFieldEnum)[keyof typeof PriceScalarFieldEnum]
+
+
+export const ProductListingScalarFieldEnum = {
+  id: 'id',
+  chainId: 'chainId',
+  sourceSku: 'sourceSku',
+  name: 'name',
+  brand: 'brand',
+  unit: 'unit',
+  imageUrl: 'imageUrl',
+  productId: 'productId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProductListingScalarFieldEnum = (typeof ProductListingScalarFieldEnum)[keyof typeof ProductListingScalarFieldEnum]
 
 
 export const CampaignScalarFieldEnum = {
@@ -1798,6 +1892,7 @@ export type GlobalOmitConfig = {
   marketBranch?: Prisma.MarketBranchOmit
   product?: Prisma.ProductOmit
   price?: Prisma.PriceOmit
+  productListing?: Prisma.ProductListingOmit
   campaign?: Prisma.CampaignOmit
   user?: Prisma.UserOmit
   address?: Prisma.AddressOmit

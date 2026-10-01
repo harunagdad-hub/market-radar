@@ -1,0 +1,1262 @@
+{
+  "numberOfFound": 445,
+  "searchResultType": 1,
+  "content": [
+    {
+      "id": "1YXB",
+      "title": "Pınar Süt 200 Ml",
+      "brand": "Pınar",
+      "imageUrl": "https://cdn.marketfiyati.org.tr/carrefourimages/30092085.png",
+      "refinedVolumeOrWeight": "200 ML",
+      "categories": [
+        "Uzun Ömürlü Süt",
+        "Gıda",
+        "Self Servıs",
+        "Günlük",
+        "Süt",
+        "Süt Yoğurt Ve Günlük Paketli",
+        "Sade Süt"
+      ],
+      "main_category": "Süt",
+      "menu_category": "Süt Ürünleri ve Kahvaltılık",
+      "productDepotInfoList": [
+        {
+          "depotId": "migros-564",
+          "depotName": "Kadıköy Çarşı M Migros",
+          "price": 28,
+          "unitPrice": "140,00 ₺/Lt",
+          "unitPriceValue": 140,
+          "marketAdi": "migros",
+          "percentage": 0,
+          "longitude": 29.024479,
+          "latitude": 40.99048,
+          "indexTime": "30.09.2026 12:18",
+          "discount": false,
+          "discountRatio": null,
+          "promotionText": null
+        },
+        {
+          "depotId": "carrefour-1012",
+          "depotName": "Istanbul Acıbadem Hıper",
+          "price": 30.75,
+          "unitPrice": "153,75 ₺/Lt",
+          "unitPriceValue": 153.75,
+          "marketAdi": "carrefour",
+          "percentage": 9.821428,
+          "longitude": 29.0316,
+          "latitude": 40.9988,
+          "indexTime": "30.09.2026 12:18",
+          "discount": false,
+          "discountRatio": null,
+          "promotionText": null
+        }
+      ]
+    },
+    {
+      "id": "0FV9",
+      "title": "İçim Süt 500 Ml",
+      "brand": "İçim",
+      "imageUrl": "https://cdn.marketfiyati.org.tr/carrefour/30096709.jpg",
+      "refinedVolumeOrWeight": "500 ML",
+      "categories": [
+        "Uzun Ömürlü Süt",
+        "Gıda",
+        "Self Servıs",
+        "Günlük"
+      ],
+      "main_category": "Süt",
+      "menu_category": "Süt Ürünleri ve Kahvaltılık",
+      "productDepotInfoList": [
+        {
+          "depotId": "carrefour-1012",
+          "depotName": "Istanbul Acıbadem Hıper",
+          "price": 45.95,
+          "unitPrice": "91,90 ₺/Lt",
+          "unitPriceValue": 91.9,
+          "marketAdi": "carrefour",
+          "percentage": 0,
+          "longitude": 29.0316,
+          "latitude": 40.9988,
+          "indexTime": "30.09.2026 12:17",
+          "discount": false,
+          "discountRatio": null,
+          "promotionText": null
+        }
+      ]
+    },
+    {
+      "id": "1I9X",
+      "title": "İçim Laktozsuz Süt 500 Ml",
+      "brand": "İçim",
+      "imageUrl": "https://cdn.marketfiyati.org.tr/carrefourimages/30096710.png",
+      "refinedVolumeOrWeight": "500 ML",
+      "categories": [
+        "Uzun Ömürlü Süt",
+        "Gıda",
+        "Self Servıs",
+        "Günlük"
+      ],
+      "main_category": "Süt",
+      "menu_category": "Süt Ürünleri ve Kahvaltılık",
+      "productDepotInfoList": [
+        {
+          "depotId": "carrefour-1012",
+          "depotName": "Istanbul Acıbadem Hıper",
+          "price": 49.95,
+          "unitPrice": "99,90 ₺/Lt",
+          "unitPriceValue": 99.9,
+          "marketAdi": "carrefour",
+          "percentage": 0,
+          "longitude": 29.0316,
+          "latitude": 40.9988,
+          "indexTime": "30.09.2026 12:18",
+          "discount": false,
+          "discountRatio": null,
+          "promotionText": null
+        }
+      ]
+    },
+    {
+      "id": "1T9S",
+      "title": "İçim Süt 1 Lt",
+      "brand": "İçim",
+      "imageUrl": "https://cdn.marketfiyati.org.tr/migros/11013025.jpg",
+      "refinedVolumeOrWeight": "1 LT",
+      "categories": [
+        "Uzun Ömürlü Süt",
+        "Gıda",
+        "Self Servıs",
+        "Günlük",
+        "Süt",
+        "Süt Yoğurt Ve Günlük Paketli",
+        "Sade Süt"
+      ],
+      "main_category": "Süt",
+      "menu_category": "Süt Ürünleri ve Kahvaltılık",
+      "productDepotInfoList": [
+        {
+          "depotId": "migros-564",
+          "depotName": "Kadıköy Çarşı M Migros",
+          "price": 69.5,
+          "unitPrice": "69,50 ₺/Lt",
+          "unitPriceValue": 69.5,
+          "marketAdi": "migros",
+          "percentage": 0,
+          "longitude": 29.024479,
+          "latitude": 40.99048,
+          "indexTime": "30.09.2026 12:17",
+          "discount": false,
+          "discountRatio": null,
+          "promotionText": null
+        },
+        {
+          "depotId": "carrefour-1012",
+          "depotName": "Istanbul Acıbadem Hıper",
+          "price": 74.95,
+          "unitPrice": "74,95 ₺/Lt",
+          "unitPriceValue": 74.95,
+          "marketAdi": "carrefour",
+          "percentage": 7.841722,
+          "longitude": 29.0316,
+          "latitude": 40.9988,
+          "indexTime": "30.09.2026 12:17",
+          "discount": false,
+          "discountRatio": null,
+          "promotionText": null
+        }
+      ]
+    },
+    {
+      "id": "21OB",
+      "title": "Danone Çilekli Süt 1.08 Lt",
+      "brand": "Danone",
+      "imageUrl": "https://cdn.marketfiyati.org.tr/a101images/12002059.png",
+      "refinedVolumeOrWeight": "1.08 LT",
+      "categories": [
+        "Aromalı Süt",
+        "Süt Ve Sütlü Mamüller",
+        "Süt"
+      ],
+      "main_category": "Süt",
+      "menu_category": "Süt Ürünleri ve Kahvaltılık",
+      "productDepotInfoList": [
+        {
+          "depotId": "a101-4217",
+          "depotName": "Rıhtım Kadıköy Istanbul",
+          "price": 135,
+          "unitPrice": "125,00 ₺/Lt",
+          "unitPriceValue": 125,
+          "marketAdi": "a101",
+          "percentage": 0,
+          "longitude": 29.027111,
+          "latitude": 40.99341,
+          "indexTime": "30.09.2026 12:14",
+          "discount": false,
+          "discountRatio": null,
+          "promotionText": null
+        }
+      ]
+    }
+  ],
+  "facetMap": {
+    "offer_market": [
+      {
+        "name": "carrefour",
+        "count": 166
+      },
+      {
+        "name": "migros",
+        "count": 159
+      },
+      {
+        "name": "bim",
+        "count": 74
+      },
+      {
+        "name": "a101",
+        "count": 60
+      },
+      {
+        "name": "sok",
+        "count": 51
+      },
+      {
+        "name": "tarim_kredi",
+        "count": 35
+      },
+      {
+        "name": "hakmar",
+        "count": 27
+      }
+    ],
+    "sub_category": [
+      {
+        "name": "Aromalı Süt",
+        "count": 85
+      },
+      {
+        "name": "UHT Süt",
+        "count": 77
+      },
+      {
+        "name": "Pastörize Süt",
+        "count": 18
+      },
+      {
+        "name": "Laktozsuz Süt",
+        "count": 17
+      },
+      {
+        "name": "Proteinli Süt",
+        "count": 17
+      },
+      {
+        "name": "Krema",
+        "count": 32
+      },
+      {
+        "name": "Bitkisel Süt",
+        "count": 25
+      },
+      {
+        "name": "Kaymak",
+        "count": 17
+      },
+      {
+        "name": "Süt Bazlı Tatlılar",
+        "count": 4
+      },
+      {
+        "name": "Yoğunlaştırılmış Süt",
+        "count": 3
+      },
+      {
+        "name": "Devam Sütleri",
+        "count": 74
+      },
+      {
+        "name": "Organik Bebek Atıştırmalıkları",
+        "count": 1
+      },
+      {
+        "name": "Dilim Kek",
+        "count": 16
+      },
+      {
+        "name": "Top Kek",
+        "count": 2
+      },
+      {
+        "name": "Baton Kek",
+        "count": 1
+      },
+      {
+        "name": "Mısır Cipsleri",
+        "count": 5
+      },
+      {
+        "name": "Çerez Cipsler",
+        "count": 2
+      },
+      {
+        "name": "Fırınlanmış Cipsler",
+        "count": 1
+      }
+    ],
+    "refined_quantity_unit": [],
+    "main_category": [
+      {
+        "name": "Süt",
+        "count": 219,
+        "children": [
+          {
+            "name": "Aromalı Süt",
+            "count": 85
+          },
+          {
+            "name": "UHT Süt",
+            "count": 77
+          },
+          {
+            "name": "Pastörize Süt",
+            "count": 18
+          },
+          {
+            "name": "Laktozsuz Süt",
+            "count": 17
+          },
+          {
+            "name": "Proteinli Süt",
+            "count": 17
+          }
+        ]
+      },
+      {
+        "name": "Diğer Süt Ürünleri",
+        "count": 81,
+        "children": [
+          {
+            "name": "Krema",
+            "count": 32
+          },
+          {
+            "name": "Bitkisel Süt",
+            "count": 25
+          },
+          {
+            "name": "Kaymak",
+            "count": 17
+          },
+          {
+            "name": "Süt Bazlı Tatlılar",
+            "count": 4
+          },
+          {
+            "name": "Yoğunlaştırılmış Süt",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "name": "Bebek Mamaları",
+        "count": 75,
+        "children": [
+          {
+            "name": "Devam Sütleri",
+            "count": 74
+          },
+          {
+            "name": "Organik Bebek Atıştırmalıkları",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "Kek",
+        "count": 19,
+        "children": [
+          {
+            "name": "Dilim Kek",
+            "count": 16
+          },
+          {
+            "name": "Top Kek",
+            "count": 2
+          },
+          {
+            "name": "Baton Kek",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "name": "Cips",
+        "count": 8,
+        "children": [
+          {
+            "name": "Mısır Cipsleri",
+            "count": 5
+          },
+          {
+            "name": "Çerez Cipsler",
+            "count": 2
+          },
+          {
+            "name": "Fırınlanmış Cipsler",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "refined_volume_weight": [
+      {
+        "name": "1 LT",
+        "count": 111
+      },
+      {
+        "name": "200 ML",
+        "count": 69
+      },
+      {
+        "name": "400 GR",
+        "count": 32
+      },
+      {
+        "name": "180 ML",
+        "count": 28
+      },
+      {
+        "name": "1.08 LT",
+        "count": 19
+      },
+      {
+        "name": "500 ML",
+        "count": 19
+      },
+      {
+        "name": "800 GR",
+        "count": 16
+      },
+      {
+        "name": "400 ML",
+        "count": 11
+      },
+      {
+        "name": "150 GR",
+        "count": 9
+      },
+      {
+        "name": "200 GR",
+        "count": 9
+      },
+      {
+        "name": "250 GR",
+        "count": 9
+      },
+      {
+        "name": "270 GR",
+        "count": 9
+      },
+      {
+        "name": "350 GR",
+        "count": 8
+      },
+      {
+        "name": "35 GR",
+        "count": 7
+      },
+      {
+        "name": "100 GR",
+        "count": 6
+      },
+      {
+        "name": "600 GR",
+        "count": 6
+      },
+      {
+        "name": "1 KG",
+        "count": 5
+      },
+      {
+        "name": "330 ML",
+        "count": 5
+      },
+      {
+        "name": "1.2 KG",
+        "count": 4
+      },
+      {
+        "name": "1.2 LT",
+        "count": 4
+      },
+      {
+        "name": "28 GR",
+        "count": 4
+      },
+      {
+        "name": "310 ML",
+        "count": 4
+      },
+      {
+        "name": "112 GR",
+        "count": 3
+      },
+      {
+        "name": "250 ML",
+        "count": 3
+      },
+      {
+        "name": "30 GR",
+        "count": 3
+      },
+      {
+        "name": "1.5 LT",
+        "count": 2
+      },
+      {
+        "name": "130 GR",
+        "count": 2
+      },
+      {
+        "name": "140 GR",
+        "count": 2
+      },
+      {
+        "name": "188 ML",
+        "count": 2
+      },
+      {
+        "name": "230 ML",
+        "count": 2
+      },
+      {
+        "name": "3 LT",
+        "count": 2
+      },
+      {
+        "name": "70 ML",
+        "count": 2
+      },
+      {
+        "name": "117 GR",
+        "count": 1
+      },
+      {
+        "name": "125 GR",
+        "count": 1
+      },
+      {
+        "name": "135 GR",
+        "count": 1
+      },
+      {
+        "name": "150 ML",
+        "count": 1
+      },
+      {
+        "name": "165 ML",
+        "count": 1
+      },
+      {
+        "name": "176 GR",
+        "count": 1
+      },
+      {
+        "name": "180 GR",
+        "count": 1
+      },
+      {
+        "name": "188 GR",
+        "count": 1
+      },
+      {
+        "name": "240 GR",
+        "count": 1
+      },
+      {
+        "name": "285 GR",
+        "count": 1
+      },
+      {
+        "name": "285 ML",
+        "count": 1
+      },
+      {
+        "name": "300 GR",
+        "count": 1
+      },
+      {
+        "name": "300 ML",
+        "count": 1
+      },
+      {
+        "name": "33 GR",
+        "count": 1
+      },
+      {
+        "name": "38 GR",
+        "count": 1
+      },
+      {
+        "name": "380 GR",
+        "count": 1
+      },
+      {
+        "name": "4 LT",
+        "count": 1
+      },
+      {
+        "name": "40 GR",
+        "count": 1
+      },
+      {
+        "name": "45 GR",
+        "count": 1
+      },
+      {
+        "name": "450 ML",
+        "count": 1
+      },
+      {
+        "name": "500 GR",
+        "count": 1
+      },
+      {
+        "name": "560 GR",
+        "count": 1
+      },
+      {
+        "name": "65 GR",
+        "count": 1
+      },
+      {
+        "name": "650 ML",
+        "count": 1
+      },
+      {
+        "name": "68 GR",
+        "count": 1
+      },
+      {
+        "name": "750 GR",
+        "count": 1
+      },
+      {
+        "name": "800 ML",
+        "count": 1
+      },
+      {
+        "name": "900 ML",
+        "count": 1
+      }
+    ],
+    "offer_depot": [
+      {
+        "name": "migros-4909",
+        "count": 77
+      },
+      {
+        "name": "bim-U611",
+        "count": 74
+      },
+      {
+        "name": "bim-U627",
+        "count": 74
+      },
+      {
+        "name": "sok-13627",
+        "count": 52
+      },
+      {
+        "name": "sok-14352",
+        "count": 51
+      },
+      {
+        "name": "sok-2455",
+        "count": 49
+      },
+      {
+        "name": "sok-13971",
+        "count": 49
+      },
+      {
+        "name": "sok-10275",
+        "count": 47
+      },
+      {
+        "name": "sok-594",
+        "count": 46
+      },
+      {
+        "name": "sok-2417",
+        "count": 46
+      },
+      {
+        "name": "a101-6405",
+        "count": 30
+      },
+      {
+        "name": "a101-6997",
+        "count": 28
+      },
+      {
+        "name": "a101-K576",
+        "count": 28
+      },
+      {
+        "name": "a101-K313",
+        "count": 26
+      },
+      {
+        "name": "a101-H052",
+        "count": 26
+      },
+      {
+        "name": "a101-0363",
+        "count": 25
+      },
+      {
+        "name": "a101-0596",
+        "count": 25
+      },
+      {
+        "name": "a101-G960",
+        "count": 25
+      },
+      {
+        "name": "tarim_kredi-5005",
+        "count": 7
+      },
+      {
+        "name": "tarim_kredi-5091",
+        "count": 5
+      }
+    ],
+    "brand": [
+      {
+        "name": "İçim",
+        "count": 47
+      },
+      {
+        "name": "Pınar",
+        "count": 27
+      },
+      {
+        "name": "Sek",
+        "count": 26
+      },
+      {
+        "name": "Mis",
+        "count": 22
+      },
+      {
+        "name": "Aptamil",
+        "count": 20
+      },
+      {
+        "name": "Dost",
+        "count": 19
+      },
+      {
+        "name": "Torku",
+        "count": 18
+      },
+      {
+        "name": "Sma",
+        "count": 15
+      },
+      {
+        "name": "Bebelac",
+        "count": 14
+      },
+      {
+        "name": "Sütaş",
+        "count": 14
+      },
+      {
+        "name": "Alpro",
+        "count": 12
+      },
+      {
+        "name": "Hipp",
+        "count": 11
+      },
+      {
+        "name": "Danone",
+        "count": 10
+      },
+      {
+        "name": "Tarım Kredi",
+        "count": 10
+      },
+      {
+        "name": "Birşah",
+        "count": 8
+      },
+      {
+        "name": "Disney",
+        "count": 8
+      },
+      {
+        "name": "Eti",
+        "count": 8
+      },
+      {
+        "name": "Carrefour",
+        "count": 7
+      },
+      {
+        "name": "Göynük",
+        "count": 6
+      },
+      {
+        "name": "Nesquik",
+        "count": 6
+      },
+      {
+        "name": "Kinder",
+        "count": 5
+      },
+      {
+        "name": "Le Petit Marseillais",
+        "count": 5
+      },
+      {
+        "name": "Milkten",
+        "count": 5
+      },
+      {
+        "name": "Aynes",
+        "count": 4
+      },
+      {
+        "name": "Dimes",
+        "count": 4
+      },
+      {
+        "name": "Et ve Süt Kurumu",
+        "count": 4
+      },
+      {
+        "name": "Fomilk",
+        "count": 4
+      },
+      {
+        "name": "Nilky",
+        "count": 4
+      },
+      {
+        "name": "Yörükoğlu",
+        "count": 4
+      },
+      {
+        "name": "Bebivita",
+        "count": 3
+      },
+      {
+        "name": "Mamamil",
+        "count": 3
+      },
+      {
+        "name": "Migros",
+        "count": 3
+      },
+      {
+        "name": "Mövenpick",
+        "count": 3
+      },
+      {
+        "name": "Nivea",
+        "count": 3
+      },
+      {
+        "name": "Tikveşli",
+        "count": 3
+      },
+      {
+        "name": "Tire Süt Kooperatifi",
+        "count": 3
+      },
+      {
+        "name": "Yörüksüt",
+        "count": 3
+      },
+      {
+        "name": "Bebelac Gold",
+        "count": 2
+      },
+      {
+        "name": "Birşah Milkino",
+        "count": 2
+      },
+      {
+        "name": "Dove",
+        "count": 2
+      },
+      {
+        "name": "Duranlar",
+        "count": 2
+      },
+      {
+        "name": "Eker",
+        "count": 2
+      },
+      {
+        "name": "Ganik",
+        "count": 2
+      },
+      {
+        "name": "Içimino",
+        "count": 2
+      },
+      {
+        "name": "Kidy",
+        "count": 2
+      },
+      {
+        "name": "Korovka",
+        "count": 2
+      },
+      {
+        "name": "President",
+        "count": 2
+      },
+      {
+        "name": "Sana",
+        "count": 2
+      },
+      {
+        "name": "Tuğra",
+        "count": 2
+      },
+      {
+        "name": "Yörsan",
+        "count": 2
+      },
+      {
+        "name": "Şölen",
+        "count": 2
+      },
+      {
+        "name": "Adios",
+        "count": 1
+      },
+      {
+        "name": "Amigo",
+        "count": 1
+      },
+      {
+        "name": "Aroy-D",
+        "count": 1
+      },
+      {
+        "name": "Arıcı",
+        "count": 1
+      },
+      {
+        "name": "Aypop",
+        "count": 1
+      },
+      {
+        "name": "Aytaç",
+        "count": 1
+      },
+      {
+        "name": "Bahçıvan",
+        "count": 1
+      },
+      {
+        "name": "Bayır",
+        "count": 1
+      },
+      {
+        "name": "Birye",
+        "count": 1
+      },
+      {
+        "name": "Bisto",
+        "count": 1
+      },
+      {
+        "name": "Bizim",
+        "count": 1
+      },
+      {
+        "name": "Bonne Maman",
+        "count": 1
+      },
+      {
+        "name": "Carrefour Kids",
+        "count": 1
+      },
+      {
+        "name": "Cheetos",
+        "count": 1
+      },
+      {
+        "name": "Danino",
+        "count": 1
+      },
+      {
+        "name": "Dostino",
+        "count": 1
+      },
+      {
+        "name": "Dr Antique",
+        "count": 1
+      },
+      {
+        "name": "Dr. Antique",
+        "count": 1
+      },
+      {
+        "name": "Elidor",
+        "count": 1
+      },
+      {
+        "name": "Fairy",
+        "count": 1
+      },
+      {
+        "name": "Hero Goodies",
+        "count": 1
+      },
+      {
+        "name": "Kekspir",
+        "count": 1
+      },
+      {
+        "name": "Kerem",
+        "count": 1
+      },
+      {
+        "name": "Lezzethane",
+        "count": 1
+      },
+      {
+        "name": "Markasız",
+        "count": 1
+      },
+      {
+        "name": "Massimo",
+        "count": 1
+      },
+      {
+        "name": "Master Puff",
+        "count": 1
+      },
+      {
+        "name": "Matilde Vicenzi",
+        "count": 1
+      },
+      {
+        "name": "Minito Bonu",
+        "count": 1
+      },
+      {
+        "name": "Mr. Green",
+        "count": 1
+      },
+      {
+        "name": "Nimet",
+        "count": 1
+      },
+      {
+        "name": "Nivea Sun",
+        "count": 1
+      },
+      {
+        "name": "Polonez",
+        "count": 1
+      },
+      {
+        "name": "Rus Fırın",
+        "count": 1
+      },
+      {
+        "name": "Sakıpağa",
+        "count": 1
+      },
+      {
+        "name": "Sayley",
+        "count": 1
+      },
+      {
+        "name": "Superfresh",
+        "count": 1
+      },
+      {
+        "name": "Suree",
+        "count": 1
+      },
+      {
+        "name": "Tadelle",
+        "count": 1
+      },
+      {
+        "name": "Tazelen",
+        "count": 1
+      },
+      {
+        "name": "Teksüt",
+        "count": 1
+      },
+      {
+        "name": "Velioğlu",
+        "count": 1
+      },
+      {
+        "name": "Yook",
+        "count": 1
+      },
+      {
+        "name": "Çerezza",
+        "count": 1
+      },
+      {
+        "name": "Ömer Matlı Süt Çiftliği",
+        "count": 1
+      },
+      {
+        "name": "Ülker",
+        "count": 1
+      }
+    ],
+    "market_names": [
+      {
+        "name": "carrefour",
+        "count": 166
+      },
+      {
+        "name": "migros",
+        "count": 159
+      },
+      {
+        "name": "bim",
+        "count": 74
+      },
+      {
+        "name": "a101",
+        "count": 60
+      },
+      {
+        "name": "sok",
+        "count": 51
+      },
+      {
+        "name": "tarim_kredi",
+        "count": 35
+      },
+      {
+        "name": "hakmar",
+        "count": 27
+      }
+    ],
+    "offer_price": [
+      {
+        "name": "0-20",
+        "count": 53
+      },
+      {
+        "name": "20-40",
+        "count": 67
+      },
+      {
+        "name": "40-60",
+        "count": 71
+      },
+      {
+        "name": "60-80",
+        "count": 77
+      },
+      {
+        "name": "80-100",
+        "count": 57
+      },
+      {
+        "name": "100-125",
+        "count": 21
+      },
+      {
+        "name": "125-150",
+        "count": 13
+      },
+      {
+        "name": "150-200",
+        "count": 28
+      },
+      {
+        "name": "200-250",
+        "count": 17
+      },
+      {
+        "name": "250-300",
+        "count": 12
+      },
+      {
+        "name": "300-350",
+        "count": 14
+      },
+      {
+        "name": "350-400",
+        "count": 14
+      },
+      {
+        "name": "400-450",
+        "count": 2
+      },
+      {
+        "name": "600-650",
+        "count": 6
+      },
+      {
+        "name": "650-700",
+        "count": 8
+      },
+      {
+        "name": "700-750",
+        "count": 3
+      },
+      {
+        "name": "750-800",
+        "count": 1
+      },
+      {
+        "name": "800-850",
+        "count": 1
+      },
+      {
+        "name": "900-950",
+        "count": 3
+      },
+      {
+        "name": "950-1000",
+        "count": 2
+      },
+      {
+        "name": "1000-1100",
+        "count": 3
+      },
+      {
+        "name": "1200-1300",
+        "count": 5
+      },
+      {
+        "name": "1300-1400",
+        "count": 6
+      },
+      {
+        "name": "1400-1500",
+        "count": 3
+      },
+      {
+        "name": "1600-1700",
+        "count": 1
+      },
+      {
+        "name": "1700-1800",
+        "count": 4
+      }
+    ]
+  }
+}

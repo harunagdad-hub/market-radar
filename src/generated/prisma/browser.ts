@@ -53,6 +53,11 @@ export type Product = Prisma.ProductModel
  */
 export type Price = Prisma.PriceModel
 /**
+ * Model ProductListing
+ * 
+ */
+export type ProductListing = Prisma.ProductListingModel
+/**
  * Model Campaign
  * 
  */

@@ -233,6 +233,7 @@ export type MarketChainWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"MarketChain"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"MarketChain"> | Date | string
   branches?: Prisma.MarketBranchListRelationFilter
+  listings?: Prisma.ProductListingListRelationFilter
 }
 
 export type MarketChainOrderByWithRelationInput = {
@@ -244,6 +245,7 @@ export type MarketChainOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   branches?: Prisma.MarketBranchOrderByRelationAggregateInput
+  listings?: Prisma.ProductListingOrderByRelationAggregateInput
 }
 
 export type MarketChainWhereUniqueInput = Prisma.AtLeast<{
@@ -258,6 +260,7 @@ export type MarketChainWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"MarketChain"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"MarketChain"> | Date | string
   branches?: Prisma.MarketBranchListRelationFilter
+  listings?: Prisma.ProductListingListRelationFilter
 }, "id" | "name" | "slug">
 
 export type MarketChainOrderByWithAggregationInput = {
@@ -296,6 +299,7 @@ export type MarketChainCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   branches?: Prisma.MarketBranchCreateNestedManyWithoutChainInput
+  listings?: Prisma.ProductListingCreateNestedManyWithoutChainInput
 }
 
 export type MarketChainUncheckedCreateInput = {
@@ -307,6 +311,7 @@ export type MarketChainUncheckedCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   branches?: Prisma.MarketBranchUncheckedCreateNestedManyWithoutChainInput
+  listings?: Prisma.ProductListingUncheckedCreateNestedManyWithoutChainInput
 }
 
 export type MarketChainUpdateInput = {
@@ -317,6 +322,7 @@ export type MarketChainUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   branches?: Prisma.MarketBranchUpdateManyWithoutChainNestedInput
+  listings?: Prisma.ProductListingUpdateManyWithoutChainNestedInput
 }
 
 export type MarketChainUncheckedUpdateInput = {
@@ -328,6 +334,7 @@ export type MarketChainUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   branches?: Prisma.MarketBranchUncheckedUpdateManyWithoutChainNestedInput
+  listings?: Prisma.ProductListingUncheckedUpdateManyWithoutChainNestedInput
 }
 
 export type MarketChainCreateManyInput = {
@@ -424,6 +431,20 @@ export type MarketChainUpdateOneRequiredWithoutBranchesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.MarketChainUpdateToOneWithWhereWithoutBranchesInput, Prisma.MarketChainUpdateWithoutBranchesInput>, Prisma.MarketChainUncheckedUpdateWithoutBranchesInput>
 }
 
+export type MarketChainCreateNestedOneWithoutListingsInput = {
+  create?: Prisma.XOR<Prisma.MarketChainCreateWithoutListingsInput, Prisma.MarketChainUncheckedCreateWithoutListingsInput>
+  connectOrCreate?: Prisma.MarketChainCreateOrConnectWithoutListingsInput
+  connect?: Prisma.MarketChainWhereUniqueInput
+}
+
+export type MarketChainUpdateOneRequiredWithoutListingsNestedInput = {
+  create?: Prisma.XOR<Prisma.MarketChainCreateWithoutListingsInput, Prisma.MarketChainUncheckedCreateWithoutListingsInput>
+  connectOrCreate?: Prisma.MarketChainCreateOrConnectWithoutListingsInput
+  upsert?: Prisma.MarketChainUpsertWithoutListingsInput
+  connect?: Prisma.MarketChainWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.MarketChainUpdateToOneWithWhereWithoutListingsInput, Prisma.MarketChainUpdateWithoutListingsInput>, Prisma.MarketChainUncheckedUpdateWithoutListingsInput>
+}
+
 export type MarketChainCreateWithoutBranchesInput = {
   name: string
   slug: string
@@ -431,6 +452,7 @@ export type MarketChainCreateWithoutBranchesInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  listings?: Prisma.ProductListingCreateNestedManyWithoutChainInput
 }
 
 export type MarketChainUncheckedCreateWithoutBranchesInput = {
@@ -441,6 +463,7 @@ export type MarketChainUncheckedCreateWithoutBranchesInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  listings?: Prisma.ProductListingUncheckedCreateNestedManyWithoutChainInput
 }
 
 export type MarketChainCreateOrConnectWithoutBranchesInput = {
@@ -466,6 +489,7 @@ export type MarketChainUpdateWithoutBranchesInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  listings?: Prisma.ProductListingUpdateManyWithoutChainNestedInput
 }
 
 export type MarketChainUncheckedUpdateWithoutBranchesInput = {
@@ -476,6 +500,65 @@ export type MarketChainUncheckedUpdateWithoutBranchesInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  listings?: Prisma.ProductListingUncheckedUpdateManyWithoutChainNestedInput
+}
+
+export type MarketChainCreateWithoutListingsInput = {
+  name: string
+  slug: string
+  logoUrl?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  branches?: Prisma.MarketBranchCreateNestedManyWithoutChainInput
+}
+
+export type MarketChainUncheckedCreateWithoutListingsInput = {
+  id?: number
+  name: string
+  slug: string
+  logoUrl?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  branches?: Prisma.MarketBranchUncheckedCreateNestedManyWithoutChainInput
+}
+
+export type MarketChainCreateOrConnectWithoutListingsInput = {
+  where: Prisma.MarketChainWhereUniqueInput
+  create: Prisma.XOR<Prisma.MarketChainCreateWithoutListingsInput, Prisma.MarketChainUncheckedCreateWithoutListingsInput>
+}
+
+export type MarketChainUpsertWithoutListingsInput = {
+  update: Prisma.XOR<Prisma.MarketChainUpdateWithoutListingsInput, Prisma.MarketChainUncheckedUpdateWithoutListingsInput>
+  create: Prisma.XOR<Prisma.MarketChainCreateWithoutListingsInput, Prisma.MarketChainUncheckedCreateWithoutListingsInput>
+  where?: Prisma.MarketChainWhereInput
+}
+
+export type MarketChainUpdateToOneWithWhereWithoutListingsInput = {
+  where?: Prisma.MarketChainWhereInput
+  data: Prisma.XOR<Prisma.MarketChainUpdateWithoutListingsInput, Prisma.MarketChainUncheckedUpdateWithoutListingsInput>
+}
+
+export type MarketChainUpdateWithoutListingsInput = {
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  branches?: Prisma.MarketBranchUpdateManyWithoutChainNestedInput
+}
+
+export type MarketChainUncheckedUpdateWithoutListingsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  slug?: Prisma.StringFieldUpdateOperationsInput | string
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  branches?: Prisma.MarketBranchUncheckedUpdateManyWithoutChainNestedInput
 }
 
 
@@ -485,10 +568,12 @@ export type MarketChainUncheckedUpdateWithoutBranchesInput = {
 
 export type MarketChainCountOutputType = {
   branches: number
+  listings: number
 }
 
 export type MarketChainCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   branches?: boolean | MarketChainCountOutputTypeCountBranchesArgs
+  listings?: boolean | MarketChainCountOutputTypeCountListingsArgs
 }
 
 /**
@@ -508,6 +593,13 @@ export type MarketChainCountOutputTypeCountBranchesArgs<ExtArgs extends runtime.
   where?: Prisma.MarketBranchWhereInput
 }
 
+/**
+ * MarketChainCountOutputType without action
+ */
+export type MarketChainCountOutputTypeCountListingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProductListingWhereInput
+}
+
 
 export type MarketChainSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -518,6 +610,7 @@ export type MarketChainSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   createdAt?: boolean
   updatedAt?: boolean
   branches?: boolean | Prisma.MarketChain$branchesArgs<ExtArgs>
+  listings?: boolean | Prisma.MarketChain$listingsArgs<ExtArgs>
   _count?: boolean | Prisma.MarketChainCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["marketChain"]>
 
@@ -554,6 +647,7 @@ export type MarketChainSelectScalar = {
 export type MarketChainOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "logoUrl" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["marketChain"]>
 export type MarketChainInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   branches?: boolean | Prisma.MarketChain$branchesArgs<ExtArgs>
+  listings?: boolean | Prisma.MarketChain$listingsArgs<ExtArgs>
   _count?: boolean | Prisma.MarketChainCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type MarketChainIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -563,6 +657,7 @@ export type $MarketChainPayload<ExtArgs extends runtime.Types.Extensions.Interna
   name: "MarketChain"
   objects: {
     branches: Prisma.$MarketBranchPayload<ExtArgs>[]
+    listings: Prisma.$ProductListingPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -967,6 +1062,7 @@ readonly fields: MarketChainFieldRefs;
 export interface Prisma__MarketChainClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   branches<T extends Prisma.MarketChain$branchesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MarketChain$branchesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarketBranchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  listings<T extends Prisma.MarketChain$listingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MarketChain$listingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProductListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1417,6 +1513,30 @@ export type MarketChain$branchesArgs<ExtArgs extends runtime.Types.Extensions.In
   take?: number
   skip?: number
   distinct?: Prisma.MarketBranchScalarFieldEnum | Prisma.MarketBranchScalarFieldEnum[]
+}
+
+/**
+ * MarketChain.listings
+ */
+export type MarketChain$listingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ProductListing
+   */
+  select?: Prisma.ProductListingSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ProductListing
+   */
+  omit?: Prisma.ProductListingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProductListingInclude<ExtArgs> | null
+  where?: Prisma.ProductListingWhereInput
+  orderBy?: Prisma.ProductListingOrderByWithRelationInput | Prisma.ProductListingOrderByWithRelationInput[]
+  cursor?: Prisma.ProductListingWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProductListingScalarFieldEnum | Prisma.ProductListingScalarFieldEnum[]
 }
 
 /**

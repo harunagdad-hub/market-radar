@@ -6,17 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/adapter-pg": "7.10.0",
     "@prisma/client": "7.10.0",
+    "@types/d3-geo": "^3.1.1",
+    "@types/leaflet": "^1.9.22",
+    "@types/three": "^0.186.0",
+    "d3-geo": "^3.1.1",
     "dotenv": "^18.0.4",
+    "leaflet": "^1.9.4",
     "next": "16.3.7",
     "pg": "^8.23.0",
     "prisma": "7.10.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "react-globe.gl": "^2.38.0",
+    "react-leaflet": "^5.0.0",
+    "three": "^0.186.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

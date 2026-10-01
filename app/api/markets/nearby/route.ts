@@ -47,13 +47,14 @@ export async function GET(request: NextRequest) {
     });
 
     const nearbyMarkets = markets
+      .filter((market) => market.latitude !== null && market.longitude !== null)
       .map((market) => ({
         ...market,
         distanceKm: distanceKm(
           lat,
           lng,
-          market.latitude,
-          market.longitude
+          market.latitude!,
+          market.longitude!
         ),
       }))
       .filter((market) => market.distanceKm <= radius)

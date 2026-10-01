@@ -1,0 +1,302 @@
+[
+  {
+    "id": "sok-2455",
+    "sellerName": "Altındağ",
+    "location": {
+      "lon": 32.86107,
+      "lat": 39.93399
+    },
+    "marketName": "sok",
+    "distance": 133.9296491192397
+  },
+  {
+    "id": "a101-0363",
+    "sellerName": "Belediye Altındağ Ankara",
+    "location": {
+      "lon": 32.86184,
+      "lat": 39.934135
+    },
+    "marketName": "a101",
+    "distance": 199.88001129577228
+  },
+  {
+    "id": "sok-14352",
+    "sellerName": "Altındağ Opera",
+    "location": {
+      "lon": 32.8567,
+      "lat": 39.9376
+    },
+    "marketName": "sok",
+    "distance": 532.1144334416542
+  },
+  {
+    "id": "sok-594",
+    "sellerName": "Altındağ Hamamönü",
+    "location": {
+      "lon": 32.86634,
+      "lat": 39.933052
+    },
+    "marketName": "sok",
+    "distance": 567.2702159599656
+  },
+  {
+    "id": "tarim_kredi-5005",
+    "sellerName": "Ankara Ulus Market",
+    "location": {
+      "lon": 32.85458,
+      "lat": 39.93705
+    },
+    "marketName": "tarim_kredi",
+    "distance": 595.7406975841141
+  },
+  {
+    "id": "a101-6997",
+    "sellerName": "Hamamönü Altındağ Ankara",
+    "location": {
+      "lon": 32.86669,
+      "lat": 39.933178
+    },
+    "marketName": "a101",
+    "distance": 596.3704081557776
+  },
+  {
+    "id": "sok-13971",
+    "sellerName": "Ankara Keçiören Gazino",
+    "location": {
+      "lon": 32.8645,
+      "lat": 39.9282
+    },
+    "marketName": "sok",
+    "distance": 707.9116805775186
+  },
+  {
+    "id": "a101-K313",
+    "sellerName": "Posta Caddesi Altındağ Ankara",
+    "location": {
+      "lon": 32.85645,
+      "lat": 39.94004
+    },
+    "marketName": "a101",
+    "distance": 788.3323886290093
+  },
+  {
+    "id": "a101-K576",
+    "sellerName": "Zekai Tahir Altındağ Ankara",
+    "location": {
+      "lon": 32.869194,
+      "lat": 39.933018
+    },
+    "marketName": "a101",
+    "distance": 810.2236098785528
+  },
+  {
+    "id": "a101-6405",
+    "sellerName": "Strazburg Çankaya Ankara",
+    "location": {
+      "lon": 32.85191,
+      "lat": 39.92807
+    },
+    "marketName": "a101",
+    "distance": 889.6207722895019
+  },
+  {
+    "id": "sok-2417",
+    "sellerName": "Ankara Kurtuluş",
+    "location": {
+      "lon": 32.86942,
+      "lat": 39.930344
+    },
+    "marketName": "sok",
+    "distance": 895.2146784792717
+  },
+  {
+    "id": "bim-U611",
+    "sellerName": "Heykelaltındağ",
+    "location": {
+      "lon": 32.855476,
+      "lat": 39.94083
+    },
+    "marketName": "bim",
+    "distance": 900.8294029095687
+  },
+  {
+    "id": "bim-U627",
+    "sellerName": "Hacettepe  Altındağ",
+    "location": {
+      "lon": 32.87086,
+      "lat": 39.932346
+    },
+    "marketName": "bim",
+    "distance": 958.3463167596611
+  },
+  {
+    "id": "migros-4909",
+    "sellerName": "Mjet Ankara Sezenler",
+    "location": {
+      "lon": 32.8515,
+      "lat": 39.927197
+    },
+    "marketName": "migros",
+    "distance": 981.4489060721888
+  },
+  {
+    "id": "tarim_kredi-5091",
+    "sellerName": "Ankara Kolej Market",
+    "location": {
+      "lon": 32.86337,
+      "lat": 39.92461
+    },
+    "marketName": "tarim_kredi",
+    "distance": 1025.6081991633469
+  },
+  {
+    "id": "bim-U635",
+    "sellerName": "Fakülte  Çankaya",
+    "location": {
+      "lon": 32.86969,
+      "lat": 39.92818
+    },
+    "marketName": "bim",
+    "distance": 1030.1617465192137
+  },
+  {
+    "id": "bim-U648",
+    "sellerName": "Kızılay  Çankaya",
+    "location": {
+      "lon": 32.85536,
+      "lat": 39.924595
+    },
+    "marketName": "bim",
+    "distance": 1046.0639676539586
+  },
+  {
+    "id": "bim-U646",
+    "sellerName": "Sezenler Mini  Çankaya",
+    "location": {
+      "lon": 32.85165,
+      "lat": 39.92624
+    },
+    "marketName": "bim",
+    "distance": 1050.5806727960323
+  },
+  {
+    "id": "migros-4643",
+    "sellerName": "Ziya Gökalp Ankara M Migros",
+    "location": {
+      "lon": 32.86198,
+      "lat": 39.92324
+    },
+    "marketName": "migros",
+    "distance": 1145.5740149910416
+  },
+  {
+    "id": "migros-3331",
+    "sellerName": "Kurtuluş Ankara M Migros",
+    "location": {
+      "lon": 32.86849,
+      "lat": 39.92521
+    },
+    "marketName": "migros",
+    "distance": 1178.7693982350418
+  },
+  {
+    "id": "tarim_kredi-5064",
+    "sellerName": "Ankara Rüzgarlı Market",
+    "location": {
+      "lon": 32.85371,
+      "lat": 39.94298
+    },
+    "marketName": "tarim_kredi",
+    "distance": 1180.906650757185
+  },
+  {
+    "id": "tarim_kredi-5008",
+    "sellerName": "Ankara Mithatpaşa Market",
+    "location": {
+      "lon": 32.85768,
+      "lat": 39.92251
+    },
+    "marketName": "tarim_kredi",
+    "distance": 1222.51136357071
+  },
+  {
+    "id": "tarim_kredi-6723",
+    "sellerName": "Ankara Çankaya Maltepe",
+    "location": {
+      "lon": 32.84695,
+      "lat": 39.92701
+    },
+    "marketName": "tarim_kredi",
+    "distance": 1297.9298613216267
+  },
+  {
+    "id": "migros-3235",
+    "sellerName": "Anıttepe Gmk M Migros",
+    "location": {
+      "lon": 32.843723,
+      "lat": 39.931416
+    },
+    "marketName": "migros",
+    "distance": 1379.166152801009
+  },
+  {
+    "id": "migros-5175",
+    "sellerName": "Mjet Tren Garı Avm 1 Ankara",
+    "location": {
+      "lon": 32.843475,
+      "lat": 39.9347
+    },
+    "marketName": "migros",
+    "distance": 1390.0681219236044
+  },
+  {
+    "id": "carrefour-5063",
+    "sellerName": "Ankara Cebecı Mını",
+    "location": {
+      "lon": 32.87768,
+      "lat": 39.93234
+    },
+    "marketName": "carrefour",
+    "distance": 1536.9404253840298
+  },
+  {
+    "id": "carrefour-3094",
+    "sellerName": "Ankara Dıkımevı Süper",
+    "location": {
+      "lon": 32.886417,
+      "lat": 39.932495
+    },
+    "marketName": "carrefour",
+    "distance": 2279.055597860499
+  },
+  {
+    "id": "carrefour-3593",
+    "sellerName": "Ankara Tunalı Hılmı Cad Süper",
+    "location": {
+      "lon": 32.86172,
+      "lat": 39.908463
+    },
+    "marketName": "carrefour",
+    "distance": 2776.6608952975557
+  },
+  {
+    "id": "carrefour-3720",
+    "sellerName": "Ankara Çankaya Bahçelıevler",
+    "location": {
+      "lon": 32.82684,
+      "lat": 39.9295
+    },
+    "marketName": "carrefour",
+    "distance": 2833.5953066941943
+  },
+  {
+    "id": "carrefour-5427",
+    "sellerName": "Ankara Çankaya Esat Cad",
+    "location": {
+      "lon": 32.866955,
+      "lat": 39.906506
+    },
+    "marketName": "carrefour",
+    "distance": 3052.098652273697
+  }
+]

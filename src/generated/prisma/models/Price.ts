@@ -28,7 +28,7 @@ export type AggregatePrice = {
 
 export type PriceAvgAggregateOutputType = {
   id: number | null
-  productId: number | null
+  listingId: number | null
   branchId: number | null
   price: runtime.Decimal | null
   oldPrice: runtime.Decimal | null
@@ -36,7 +36,7 @@ export type PriceAvgAggregateOutputType = {
 
 export type PriceSumAggregateOutputType = {
   id: number | null
-  productId: number | null
+  listingId: number | null
   branchId: number | null
   price: runtime.Decimal | null
   oldPrice: runtime.Decimal | null
@@ -44,7 +44,7 @@ export type PriceSumAggregateOutputType = {
 
 export type PriceMinAggregateOutputType = {
   id: number | null
-  productId: number | null
+  listingId: number | null
   branchId: number | null
   price: runtime.Decimal | null
   oldPrice: runtime.Decimal | null
@@ -56,7 +56,7 @@ export type PriceMinAggregateOutputType = {
 
 export type PriceMaxAggregateOutputType = {
   id: number | null
-  productId: number | null
+  listingId: number | null
   branchId: number | null
   price: runtime.Decimal | null
   oldPrice: runtime.Decimal | null
@@ -68,7 +68,7 @@ export type PriceMaxAggregateOutputType = {
 
 export type PriceCountAggregateOutputType = {
   id: number
-  productId: number
+  listingId: number
   branchId: number
   price: number
   oldPrice: number
@@ -82,7 +82,7 @@ export type PriceCountAggregateOutputType = {
 
 export type PriceAvgAggregateInputType = {
   id?: true
-  productId?: true
+  listingId?: true
   branchId?: true
   price?: true
   oldPrice?: true
@@ -90,7 +90,7 @@ export type PriceAvgAggregateInputType = {
 
 export type PriceSumAggregateInputType = {
   id?: true
-  productId?: true
+  listingId?: true
   branchId?: true
   price?: true
   oldPrice?: true
@@ -98,7 +98,7 @@ export type PriceSumAggregateInputType = {
 
 export type PriceMinAggregateInputType = {
   id?: true
-  productId?: true
+  listingId?: true
   branchId?: true
   price?: true
   oldPrice?: true
@@ -110,7 +110,7 @@ export type PriceMinAggregateInputType = {
 
 export type PriceMaxAggregateInputType = {
   id?: true
-  productId?: true
+  listingId?: true
   branchId?: true
   price?: true
   oldPrice?: true
@@ -122,7 +122,7 @@ export type PriceMaxAggregateInputType = {
 
 export type PriceCountAggregateInputType = {
   id?: true
-  productId?: true
+  listingId?: true
   branchId?: true
   price?: true
   oldPrice?: true
@@ -221,7 +221,7 @@ export type PriceGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 
 export type PriceGroupByOutputType = {
   id: number
-  productId: number
+  listingId: number
   branchId: number
   price: runtime.Decimal
   oldPrice: runtime.Decimal | null
@@ -256,7 +256,7 @@ export type PriceWhereInput = {
   OR?: Prisma.PriceWhereInput[]
   NOT?: Prisma.PriceWhereInput | Prisma.PriceWhereInput[]
   id?: Prisma.IntFilter<"Price"> | number
-  productId?: Prisma.IntFilter<"Price"> | number
+  listingId?: Prisma.IntFilter<"Price"> | number
   branchId?: Prisma.IntFilter<"Price"> | number
   price?: Prisma.DecimalFilter<"Price"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: Prisma.DecimalNullableFilter<"Price"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -264,13 +264,13 @@ export type PriceWhereInput = {
   validFrom?: Prisma.DateTimeFilter<"Price"> | Date | string
   validUntil?: Prisma.DateTimeNullableFilter<"Price"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"Price"> | Date | string
-  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+  listing?: Prisma.XOR<Prisma.ProductListingScalarRelationFilter, Prisma.ProductListingWhereInput>
   branch?: Prisma.XOR<Prisma.MarketBranchScalarRelationFilter, Prisma.MarketBranchWhereInput>
 }
 
 export type PriceOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  productId?: Prisma.SortOrder
+  listingId?: Prisma.SortOrder
   branchId?: Prisma.SortOrder
   price?: Prisma.SortOrder
   oldPrice?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -278,7 +278,7 @@ export type PriceOrderByWithRelationInput = {
   validFrom?: Prisma.SortOrder
   validUntil?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  product?: Prisma.ProductOrderByWithRelationInput
+  listing?: Prisma.ProductListingOrderByWithRelationInput
   branch?: Prisma.MarketBranchOrderByWithRelationInput
 }
 
@@ -287,7 +287,7 @@ export type PriceWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.PriceWhereInput | Prisma.PriceWhereInput[]
   OR?: Prisma.PriceWhereInput[]
   NOT?: Prisma.PriceWhereInput | Prisma.PriceWhereInput[]
-  productId?: Prisma.IntFilter<"Price"> | number
+  listingId?: Prisma.IntFilter<"Price"> | number
   branchId?: Prisma.IntFilter<"Price"> | number
   price?: Prisma.DecimalFilter<"Price"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: Prisma.DecimalNullableFilter<"Price"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -295,13 +295,13 @@ export type PriceWhereUniqueInput = Prisma.AtLeast<{
   validFrom?: Prisma.DateTimeFilter<"Price"> | Date | string
   validUntil?: Prisma.DateTimeNullableFilter<"Price"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"Price"> | Date | string
-  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+  listing?: Prisma.XOR<Prisma.ProductListingScalarRelationFilter, Prisma.ProductListingWhereInput>
   branch?: Prisma.XOR<Prisma.MarketBranchScalarRelationFilter, Prisma.MarketBranchWhereInput>
 }, "id">
 
 export type PriceOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  productId?: Prisma.SortOrder
+  listingId?: Prisma.SortOrder
   branchId?: Prisma.SortOrder
   price?: Prisma.SortOrder
   oldPrice?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -321,7 +321,7 @@ export type PriceScalarWhereWithAggregatesInput = {
   OR?: Prisma.PriceScalarWhereWithAggregatesInput[]
   NOT?: Prisma.PriceScalarWhereWithAggregatesInput | Prisma.PriceScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Price"> | number
-  productId?: Prisma.IntWithAggregatesFilter<"Price"> | number
+  listingId?: Prisma.IntWithAggregatesFilter<"Price"> | number
   branchId?: Prisma.IntWithAggregatesFilter<"Price"> | number
   price?: Prisma.DecimalWithAggregatesFilter<"Price"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: Prisma.DecimalNullableWithAggregatesFilter<"Price"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -338,13 +338,13 @@ export type PriceCreateInput = {
   validFrom?: Date | string
   validUntil?: Date | string | null
   createdAt?: Date | string
-  product: Prisma.ProductCreateNestedOneWithoutPricesInput
+  listing: Prisma.ProductListingCreateNestedOneWithoutPricesInput
   branch: Prisma.MarketBranchCreateNestedOneWithoutPricesInput
 }
 
 export type PriceUncheckedCreateInput = {
   id?: number
-  productId: number
+  listingId: number
   branchId: number
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -361,13 +361,13 @@ export type PriceUpdateInput = {
   validFrom?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   validUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  product?: Prisma.ProductUpdateOneRequiredWithoutPricesNestedInput
+  listing?: Prisma.ProductListingUpdateOneRequiredWithoutPricesNestedInput
   branch?: Prisma.MarketBranchUpdateOneRequiredWithoutPricesNestedInput
 }
 
 export type PriceUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  listingId?: Prisma.IntFieldUpdateOperationsInput | number
   branchId?: Prisma.IntFieldUpdateOperationsInput | number
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -379,7 +379,7 @@ export type PriceUncheckedUpdateInput = {
 
 export type PriceCreateManyInput = {
   id?: number
-  productId: number
+  listingId: number
   branchId: number
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -400,7 +400,7 @@ export type PriceUpdateManyMutationInput = {
 
 export type PriceUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  listingId?: Prisma.IntFieldUpdateOperationsInput | number
   branchId?: Prisma.IntFieldUpdateOperationsInput | number
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -422,7 +422,7 @@ export type PriceOrderByRelationAggregateInput = {
 
 export type PriceCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  productId?: Prisma.SortOrder
+  listingId?: Prisma.SortOrder
   branchId?: Prisma.SortOrder
   price?: Prisma.SortOrder
   oldPrice?: Prisma.SortOrder
@@ -434,7 +434,7 @@ export type PriceCountOrderByAggregateInput = {
 
 export type PriceAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  productId?: Prisma.SortOrder
+  listingId?: Prisma.SortOrder
   branchId?: Prisma.SortOrder
   price?: Prisma.SortOrder
   oldPrice?: Prisma.SortOrder
@@ -442,7 +442,7 @@ export type PriceAvgOrderByAggregateInput = {
 
 export type PriceMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  productId?: Prisma.SortOrder
+  listingId?: Prisma.SortOrder
   branchId?: Prisma.SortOrder
   price?: Prisma.SortOrder
   oldPrice?: Prisma.SortOrder
@@ -454,7 +454,7 @@ export type PriceMaxOrderByAggregateInput = {
 
 export type PriceMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  productId?: Prisma.SortOrder
+  listingId?: Prisma.SortOrder
   branchId?: Prisma.SortOrder
   price?: Prisma.SortOrder
   oldPrice?: Prisma.SortOrder
@@ -466,7 +466,7 @@ export type PriceMinOrderByAggregateInput = {
 
 export type PriceSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  productId?: Prisma.SortOrder
+  listingId?: Prisma.SortOrder
   branchId?: Prisma.SortOrder
   price?: Prisma.SortOrder
   oldPrice?: Prisma.SortOrder
@@ -514,48 +514,6 @@ export type PriceUncheckedUpdateManyWithoutBranchNestedInput = {
   deleteMany?: Prisma.PriceScalarWhereInput | Prisma.PriceScalarWhereInput[]
 }
 
-export type PriceCreateNestedManyWithoutProductInput = {
-  create?: Prisma.XOR<Prisma.PriceCreateWithoutProductInput, Prisma.PriceUncheckedCreateWithoutProductInput> | Prisma.PriceCreateWithoutProductInput[] | Prisma.PriceUncheckedCreateWithoutProductInput[]
-  connectOrCreate?: Prisma.PriceCreateOrConnectWithoutProductInput | Prisma.PriceCreateOrConnectWithoutProductInput[]
-  createMany?: Prisma.PriceCreateManyProductInputEnvelope
-  connect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
-}
-
-export type PriceUncheckedCreateNestedManyWithoutProductInput = {
-  create?: Prisma.XOR<Prisma.PriceCreateWithoutProductInput, Prisma.PriceUncheckedCreateWithoutProductInput> | Prisma.PriceCreateWithoutProductInput[] | Prisma.PriceUncheckedCreateWithoutProductInput[]
-  connectOrCreate?: Prisma.PriceCreateOrConnectWithoutProductInput | Prisma.PriceCreateOrConnectWithoutProductInput[]
-  createMany?: Prisma.PriceCreateManyProductInputEnvelope
-  connect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
-}
-
-export type PriceUpdateManyWithoutProductNestedInput = {
-  create?: Prisma.XOR<Prisma.PriceCreateWithoutProductInput, Prisma.PriceUncheckedCreateWithoutProductInput> | Prisma.PriceCreateWithoutProductInput[] | Prisma.PriceUncheckedCreateWithoutProductInput[]
-  connectOrCreate?: Prisma.PriceCreateOrConnectWithoutProductInput | Prisma.PriceCreateOrConnectWithoutProductInput[]
-  upsert?: Prisma.PriceUpsertWithWhereUniqueWithoutProductInput | Prisma.PriceUpsertWithWhereUniqueWithoutProductInput[]
-  createMany?: Prisma.PriceCreateManyProductInputEnvelope
-  set?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
-  disconnect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
-  delete?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
-  connect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
-  update?: Prisma.PriceUpdateWithWhereUniqueWithoutProductInput | Prisma.PriceUpdateWithWhereUniqueWithoutProductInput[]
-  updateMany?: Prisma.PriceUpdateManyWithWhereWithoutProductInput | Prisma.PriceUpdateManyWithWhereWithoutProductInput[]
-  deleteMany?: Prisma.PriceScalarWhereInput | Prisma.PriceScalarWhereInput[]
-}
-
-export type PriceUncheckedUpdateManyWithoutProductNestedInput = {
-  create?: Prisma.XOR<Prisma.PriceCreateWithoutProductInput, Prisma.PriceUncheckedCreateWithoutProductInput> | Prisma.PriceCreateWithoutProductInput[] | Prisma.PriceUncheckedCreateWithoutProductInput[]
-  connectOrCreate?: Prisma.PriceCreateOrConnectWithoutProductInput | Prisma.PriceCreateOrConnectWithoutProductInput[]
-  upsert?: Prisma.PriceUpsertWithWhereUniqueWithoutProductInput | Prisma.PriceUpsertWithWhereUniqueWithoutProductInput[]
-  createMany?: Prisma.PriceCreateManyProductInputEnvelope
-  set?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
-  disconnect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
-  delete?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
-  connect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
-  update?: Prisma.PriceUpdateWithWhereUniqueWithoutProductInput | Prisma.PriceUpdateWithWhereUniqueWithoutProductInput[]
-  updateMany?: Prisma.PriceUpdateManyWithWhereWithoutProductInput | Prisma.PriceUpdateManyWithWhereWithoutProductInput[]
-  deleteMany?: Prisma.PriceScalarWhereInput | Prisma.PriceScalarWhereInput[]
-}
-
 export type DecimalFieldUpdateOperationsInput = {
   set?: runtime.Decimal | runtime.DecimalJsLike | number | string
   increment?: runtime.Decimal | runtime.DecimalJsLike | number | string
@@ -580,6 +538,48 @@ export type NullableDateTimeFieldUpdateOperationsInput = {
   set?: Date | string | null
 }
 
+export type PriceCreateNestedManyWithoutListingInput = {
+  create?: Prisma.XOR<Prisma.PriceCreateWithoutListingInput, Prisma.PriceUncheckedCreateWithoutListingInput> | Prisma.PriceCreateWithoutListingInput[] | Prisma.PriceUncheckedCreateWithoutListingInput[]
+  connectOrCreate?: Prisma.PriceCreateOrConnectWithoutListingInput | Prisma.PriceCreateOrConnectWithoutListingInput[]
+  createMany?: Prisma.PriceCreateManyListingInputEnvelope
+  connect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
+}
+
+export type PriceUncheckedCreateNestedManyWithoutListingInput = {
+  create?: Prisma.XOR<Prisma.PriceCreateWithoutListingInput, Prisma.PriceUncheckedCreateWithoutListingInput> | Prisma.PriceCreateWithoutListingInput[] | Prisma.PriceUncheckedCreateWithoutListingInput[]
+  connectOrCreate?: Prisma.PriceCreateOrConnectWithoutListingInput | Prisma.PriceCreateOrConnectWithoutListingInput[]
+  createMany?: Prisma.PriceCreateManyListingInputEnvelope
+  connect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
+}
+
+export type PriceUpdateManyWithoutListingNestedInput = {
+  create?: Prisma.XOR<Prisma.PriceCreateWithoutListingInput, Prisma.PriceUncheckedCreateWithoutListingInput> | Prisma.PriceCreateWithoutListingInput[] | Prisma.PriceUncheckedCreateWithoutListingInput[]
+  connectOrCreate?: Prisma.PriceCreateOrConnectWithoutListingInput | Prisma.PriceCreateOrConnectWithoutListingInput[]
+  upsert?: Prisma.PriceUpsertWithWhereUniqueWithoutListingInput | Prisma.PriceUpsertWithWhereUniqueWithoutListingInput[]
+  createMany?: Prisma.PriceCreateManyListingInputEnvelope
+  set?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
+  disconnect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
+  delete?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
+  connect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
+  update?: Prisma.PriceUpdateWithWhereUniqueWithoutListingInput | Prisma.PriceUpdateWithWhereUniqueWithoutListingInput[]
+  updateMany?: Prisma.PriceUpdateManyWithWhereWithoutListingInput | Prisma.PriceUpdateManyWithWhereWithoutListingInput[]
+  deleteMany?: Prisma.PriceScalarWhereInput | Prisma.PriceScalarWhereInput[]
+}
+
+export type PriceUncheckedUpdateManyWithoutListingNestedInput = {
+  create?: Prisma.XOR<Prisma.PriceCreateWithoutListingInput, Prisma.PriceUncheckedCreateWithoutListingInput> | Prisma.PriceCreateWithoutListingInput[] | Prisma.PriceUncheckedCreateWithoutListingInput[]
+  connectOrCreate?: Prisma.PriceCreateOrConnectWithoutListingInput | Prisma.PriceCreateOrConnectWithoutListingInput[]
+  upsert?: Prisma.PriceUpsertWithWhereUniqueWithoutListingInput | Prisma.PriceUpsertWithWhereUniqueWithoutListingInput[]
+  createMany?: Prisma.PriceCreateManyListingInputEnvelope
+  set?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
+  disconnect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
+  delete?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
+  connect?: Prisma.PriceWhereUniqueInput | Prisma.PriceWhereUniqueInput[]
+  update?: Prisma.PriceUpdateWithWhereUniqueWithoutListingInput | Prisma.PriceUpdateWithWhereUniqueWithoutListingInput[]
+  updateMany?: Prisma.PriceUpdateManyWithWhereWithoutListingInput | Prisma.PriceUpdateManyWithWhereWithoutListingInput[]
+  deleteMany?: Prisma.PriceScalarWhereInput | Prisma.PriceScalarWhereInput[]
+}
+
 export type PriceCreateWithoutBranchInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -587,12 +587,12 @@ export type PriceCreateWithoutBranchInput = {
   validFrom?: Date | string
   validUntil?: Date | string | null
   createdAt?: Date | string
-  product: Prisma.ProductCreateNestedOneWithoutPricesInput
+  listing: Prisma.ProductListingCreateNestedOneWithoutPricesInput
 }
 
 export type PriceUncheckedCreateWithoutBranchInput = {
   id?: number
-  productId: number
+  listingId: number
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   source?: $Enums.PriceSource
@@ -632,7 +632,7 @@ export type PriceScalarWhereInput = {
   OR?: Prisma.PriceScalarWhereInput[]
   NOT?: Prisma.PriceScalarWhereInput | Prisma.PriceScalarWhereInput[]
   id?: Prisma.IntFilter<"Price"> | number
-  productId?: Prisma.IntFilter<"Price"> | number
+  listingId?: Prisma.IntFilter<"Price"> | number
   branchId?: Prisma.IntFilter<"Price"> | number
   price?: Prisma.DecimalFilter<"Price"> | runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: Prisma.DecimalNullableFilter<"Price"> | runtime.Decimal | runtime.DecimalJsLike | number | string | null
@@ -642,7 +642,7 @@ export type PriceScalarWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"Price"> | Date | string
 }
 
-export type PriceCreateWithoutProductInput = {
+export type PriceCreateWithoutListingInput = {
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   source?: $Enums.PriceSource
@@ -652,7 +652,7 @@ export type PriceCreateWithoutProductInput = {
   branch: Prisma.MarketBranchCreateNestedOneWithoutPricesInput
 }
 
-export type PriceUncheckedCreateWithoutProductInput = {
+export type PriceUncheckedCreateWithoutListingInput = {
   id?: number
   branchId: number
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
@@ -663,35 +663,35 @@ export type PriceUncheckedCreateWithoutProductInput = {
   createdAt?: Date | string
 }
 
-export type PriceCreateOrConnectWithoutProductInput = {
+export type PriceCreateOrConnectWithoutListingInput = {
   where: Prisma.PriceWhereUniqueInput
-  create: Prisma.XOR<Prisma.PriceCreateWithoutProductInput, Prisma.PriceUncheckedCreateWithoutProductInput>
+  create: Prisma.XOR<Prisma.PriceCreateWithoutListingInput, Prisma.PriceUncheckedCreateWithoutListingInput>
 }
 
-export type PriceCreateManyProductInputEnvelope = {
-  data: Prisma.PriceCreateManyProductInput | Prisma.PriceCreateManyProductInput[]
+export type PriceCreateManyListingInputEnvelope = {
+  data: Prisma.PriceCreateManyListingInput | Prisma.PriceCreateManyListingInput[]
   skipDuplicates?: boolean
 }
 
-export type PriceUpsertWithWhereUniqueWithoutProductInput = {
+export type PriceUpsertWithWhereUniqueWithoutListingInput = {
   where: Prisma.PriceWhereUniqueInput
-  update: Prisma.XOR<Prisma.PriceUpdateWithoutProductInput, Prisma.PriceUncheckedUpdateWithoutProductInput>
-  create: Prisma.XOR<Prisma.PriceCreateWithoutProductInput, Prisma.PriceUncheckedCreateWithoutProductInput>
+  update: Prisma.XOR<Prisma.PriceUpdateWithoutListingInput, Prisma.PriceUncheckedUpdateWithoutListingInput>
+  create: Prisma.XOR<Prisma.PriceCreateWithoutListingInput, Prisma.PriceUncheckedCreateWithoutListingInput>
 }
 
-export type PriceUpdateWithWhereUniqueWithoutProductInput = {
+export type PriceUpdateWithWhereUniqueWithoutListingInput = {
   where: Prisma.PriceWhereUniqueInput
-  data: Prisma.XOR<Prisma.PriceUpdateWithoutProductInput, Prisma.PriceUncheckedUpdateWithoutProductInput>
+  data: Prisma.XOR<Prisma.PriceUpdateWithoutListingInput, Prisma.PriceUncheckedUpdateWithoutListingInput>
 }
 
-export type PriceUpdateManyWithWhereWithoutProductInput = {
+export type PriceUpdateManyWithWhereWithoutListingInput = {
   where: Prisma.PriceScalarWhereInput
-  data: Prisma.XOR<Prisma.PriceUpdateManyMutationInput, Prisma.PriceUncheckedUpdateManyWithoutProductInput>
+  data: Prisma.XOR<Prisma.PriceUpdateManyMutationInput, Prisma.PriceUncheckedUpdateManyWithoutListingInput>
 }
 
 export type PriceCreateManyBranchInput = {
   id?: number
-  productId: number
+  listingId: number
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: runtime.Decimal | runtime.DecimalJsLike | number | string | null
   source?: $Enums.PriceSource
@@ -707,12 +707,12 @@ export type PriceUpdateWithoutBranchInput = {
   validFrom?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   validUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  product?: Prisma.ProductUpdateOneRequiredWithoutPricesNestedInput
+  listing?: Prisma.ProductListingUpdateOneRequiredWithoutPricesNestedInput
 }
 
 export type PriceUncheckedUpdateWithoutBranchInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  listingId?: Prisma.IntFieldUpdateOperationsInput | number
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   source?: Prisma.EnumPriceSourceFieldUpdateOperationsInput | $Enums.PriceSource
@@ -723,7 +723,7 @@ export type PriceUncheckedUpdateWithoutBranchInput = {
 
 export type PriceUncheckedUpdateManyWithoutBranchInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  listingId?: Prisma.IntFieldUpdateOperationsInput | number
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   source?: Prisma.EnumPriceSourceFieldUpdateOperationsInput | $Enums.PriceSource
@@ -732,7 +732,7 @@ export type PriceUncheckedUpdateManyWithoutBranchInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type PriceCreateManyProductInput = {
+export type PriceCreateManyListingInput = {
   id?: number
   branchId: number
   price: runtime.Decimal | runtime.DecimalJsLike | number | string
@@ -743,7 +743,7 @@ export type PriceCreateManyProductInput = {
   createdAt?: Date | string
 }
 
-export type PriceUpdateWithoutProductInput = {
+export type PriceUpdateWithoutListingInput = {
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
   oldPrice?: Prisma.NullableDecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string | null
   source?: Prisma.EnumPriceSourceFieldUpdateOperationsInput | $Enums.PriceSource
@@ -753,7 +753,7 @@ export type PriceUpdateWithoutProductInput = {
   branch?: Prisma.MarketBranchUpdateOneRequiredWithoutPricesNestedInput
 }
 
-export type PriceUncheckedUpdateWithoutProductInput = {
+export type PriceUncheckedUpdateWithoutListingInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   branchId?: Prisma.IntFieldUpdateOperationsInput | number
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
@@ -764,7 +764,7 @@ export type PriceUncheckedUpdateWithoutProductInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type PriceUncheckedUpdateManyWithoutProductInput = {
+export type PriceUncheckedUpdateManyWithoutListingInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   branchId?: Prisma.IntFieldUpdateOperationsInput | number
   price?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
@@ -779,7 +779,7 @@ export type PriceUncheckedUpdateManyWithoutProductInput = {
 
 export type PriceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  productId?: boolean
+  listingId?: boolean
   branchId?: boolean
   price?: boolean
   oldPrice?: boolean
@@ -787,13 +787,13 @@ export type PriceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   validFrom?: boolean
   validUntil?: boolean
   createdAt?: boolean
-  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ProductListingDefaultArgs<ExtArgs>
   branch?: boolean | Prisma.MarketBranchDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["price"]>
 
 export type PriceSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  productId?: boolean
+  listingId?: boolean
   branchId?: boolean
   price?: boolean
   oldPrice?: boolean
@@ -801,13 +801,13 @@ export type PriceSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   validFrom?: boolean
   validUntil?: boolean
   createdAt?: boolean
-  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ProductListingDefaultArgs<ExtArgs>
   branch?: boolean | Prisma.MarketBranchDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["price"]>
 
 export type PriceSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  productId?: boolean
+  listingId?: boolean
   branchId?: boolean
   price?: boolean
   oldPrice?: boolean
@@ -815,13 +815,13 @@ export type PriceSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   validFrom?: boolean
   validUntil?: boolean
   createdAt?: boolean
-  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ProductListingDefaultArgs<ExtArgs>
   branch?: boolean | Prisma.MarketBranchDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["price"]>
 
 export type PriceSelectScalar = {
   id?: boolean
-  productId?: boolean
+  listingId?: boolean
   branchId?: boolean
   price?: boolean
   oldPrice?: boolean
@@ -831,29 +831,29 @@ export type PriceSelectScalar = {
   createdAt?: boolean
 }
 
-export type PriceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "productId" | "branchId" | "price" | "oldPrice" | "source" | "validFrom" | "validUntil" | "createdAt", ExtArgs["result"]["price"]>
+export type PriceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "listingId" | "branchId" | "price" | "oldPrice" | "source" | "validFrom" | "validUntil" | "createdAt", ExtArgs["result"]["price"]>
 export type PriceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ProductListingDefaultArgs<ExtArgs>
   branch?: boolean | Prisma.MarketBranchDefaultArgs<ExtArgs>
 }
 export type PriceIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ProductListingDefaultArgs<ExtArgs>
   branch?: boolean | Prisma.MarketBranchDefaultArgs<ExtArgs>
 }
 export type PriceIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
+  listing?: boolean | Prisma.ProductListingDefaultArgs<ExtArgs>
   branch?: boolean | Prisma.MarketBranchDefaultArgs<ExtArgs>
 }
 
 export type $PricePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Price"
   objects: {
-    product: Prisma.$ProductPayload<ExtArgs>
+    listing: Prisma.$ProductListingPayload<ExtArgs>
     branch: Prisma.$MarketBranchPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    productId: number
+    listingId: number
     branchId: number
     price: runtime.Decimal
     oldPrice: runtime.Decimal | null
@@ -1255,7 +1255,7 @@ readonly fields: PriceFieldRefs;
  */
 export interface Prisma__PriceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  product<T extends Prisma.ProductDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductDefaultArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  listing<T extends Prisma.ProductListingDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductListingDefaultArgs<ExtArgs>>): Prisma.Prisma__ProductListingClient<runtime.Types.Result.GetResult<Prisma.$ProductListingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   branch<T extends Prisma.MarketBranchDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MarketBranchDefaultArgs<ExtArgs>>): Prisma.Prisma__MarketBranchClient<runtime.Types.Result.GetResult<Prisma.$MarketBranchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1287,7 +1287,7 @@ export interface Prisma__PriceClient<T, Null = never, ExtArgs extends runtime.Ty
  */
 export interface PriceFieldRefs {
   readonly id: Prisma.FieldRef<"Price", 'Int'>
-  readonly productId: Prisma.FieldRef<"Price", 'Int'>
+  readonly listingId: Prisma.FieldRef<"Price", 'Int'>
   readonly branchId: Prisma.FieldRef<"Price", 'Int'>
   readonly price: Prisma.FieldRef<"Price", 'Decimal'>
   readonly oldPrice: Prisma.FieldRef<"Price", 'Decimal'>

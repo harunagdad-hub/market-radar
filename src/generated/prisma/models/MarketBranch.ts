@@ -52,6 +52,8 @@ export type MarketBranchMinAggregateOutputType = {
   neighborhoodId: number | null
   latitude: number | null
   longitude: number | null
+  source: string | null
+  sourceId: string | null
   isActive: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -67,6 +69,8 @@ export type MarketBranchMaxAggregateOutputType = {
   neighborhoodId: number | null
   latitude: number | null
   longitude: number | null
+  source: string | null
+  sourceId: string | null
   isActive: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -82,6 +86,8 @@ export type MarketBranchCountAggregateOutputType = {
   neighborhoodId: number
   latitude: number
   longitude: number
+  source: number
+  sourceId: number
   isActive: number
   createdAt: number
   updatedAt: number
@@ -115,6 +121,8 @@ export type MarketBranchMinAggregateInputType = {
   neighborhoodId?: true
   latitude?: true
   longitude?: true
+  source?: true
+  sourceId?: true
   isActive?: true
   createdAt?: true
   updatedAt?: true
@@ -130,6 +138,8 @@ export type MarketBranchMaxAggregateInputType = {
   neighborhoodId?: true
   latitude?: true
   longitude?: true
+  source?: true
+  sourceId?: true
   isActive?: true
   createdAt?: true
   updatedAt?: true
@@ -145,6 +155,8 @@ export type MarketBranchCountAggregateInputType = {
   neighborhoodId?: true
   latitude?: true
   longitude?: true
+  source?: true
+  sourceId?: true
   isActive?: true
   createdAt?: true
   updatedAt?: true
@@ -245,8 +257,10 @@ export type MarketBranchGroupByOutputType = {
   city: string
   district: string | null
   neighborhoodId: number | null
-  latitude: number
-  longitude: number
+  latitude: number | null
+  longitude: number | null
+  source: string | null
+  sourceId: string | null
   isActive: boolean
   createdAt: Date
   updatedAt: Date
@@ -283,8 +297,10 @@ export type MarketBranchWhereInput = {
   city?: Prisma.StringFilter<"MarketBranch"> | string
   district?: Prisma.StringNullableFilter<"MarketBranch"> | string | null
   neighborhoodId?: Prisma.IntNullableFilter<"MarketBranch"> | number | null
-  latitude?: Prisma.FloatFilter<"MarketBranch"> | number
-  longitude?: Prisma.FloatFilter<"MarketBranch"> | number
+  latitude?: Prisma.FloatNullableFilter<"MarketBranch"> | number | null
+  longitude?: Prisma.FloatNullableFilter<"MarketBranch"> | number | null
+  source?: Prisma.StringNullableFilter<"MarketBranch"> | string | null
+  sourceId?: Prisma.StringNullableFilter<"MarketBranch"> | string | null
   isActive?: Prisma.BoolFilter<"MarketBranch"> | boolean
   createdAt?: Prisma.DateTimeFilter<"MarketBranch"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"MarketBranch"> | Date | string
@@ -303,8 +319,10 @@ export type MarketBranchOrderByWithRelationInput = {
   city?: Prisma.SortOrder
   district?: Prisma.SortOrderInput | Prisma.SortOrder
   neighborhoodId?: Prisma.SortOrderInput | Prisma.SortOrder
-  latitude?: Prisma.SortOrder
-  longitude?: Prisma.SortOrder
+  latitude?: Prisma.SortOrderInput | Prisma.SortOrder
+  longitude?: Prisma.SortOrderInput | Prisma.SortOrder
+  source?: Prisma.SortOrderInput | Prisma.SortOrder
+  sourceId?: Prisma.SortOrderInput | Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -317,6 +335,7 @@ export type MarketBranchOrderByWithRelationInput = {
 
 export type MarketBranchWhereUniqueInput = Prisma.AtLeast<{
   id?: number
+  source_sourceId?: Prisma.MarketBranchSourceSourceIdCompoundUniqueInput
   AND?: Prisma.MarketBranchWhereInput | Prisma.MarketBranchWhereInput[]
   OR?: Prisma.MarketBranchWhereInput[]
   NOT?: Prisma.MarketBranchWhereInput | Prisma.MarketBranchWhereInput[]
@@ -326,8 +345,10 @@ export type MarketBranchWhereUniqueInput = Prisma.AtLeast<{
   city?: Prisma.StringFilter<"MarketBranch"> | string
   district?: Prisma.StringNullableFilter<"MarketBranch"> | string | null
   neighborhoodId?: Prisma.IntNullableFilter<"MarketBranch"> | number | null
-  latitude?: Prisma.FloatFilter<"MarketBranch"> | number
-  longitude?: Prisma.FloatFilter<"MarketBranch"> | number
+  latitude?: Prisma.FloatNullableFilter<"MarketBranch"> | number | null
+  longitude?: Prisma.FloatNullableFilter<"MarketBranch"> | number | null
+  source?: Prisma.StringNullableFilter<"MarketBranch"> | string | null
+  sourceId?: Prisma.StringNullableFilter<"MarketBranch"> | string | null
   isActive?: Prisma.BoolFilter<"MarketBranch"> | boolean
   createdAt?: Prisma.DateTimeFilter<"MarketBranch"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"MarketBranch"> | Date | string
@@ -336,7 +357,7 @@ export type MarketBranchWhereUniqueInput = Prisma.AtLeast<{
   prices?: Prisma.PriceListRelationFilter
   campaigns?: Prisma.CampaignListRelationFilter
   priceReports?: Prisma.PriceReportListRelationFilter
-}, "id">
+}, "id" | "source_sourceId">
 
 export type MarketBranchOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -346,8 +367,10 @@ export type MarketBranchOrderByWithAggregationInput = {
   city?: Prisma.SortOrder
   district?: Prisma.SortOrderInput | Prisma.SortOrder
   neighborhoodId?: Prisma.SortOrderInput | Prisma.SortOrder
-  latitude?: Prisma.SortOrder
-  longitude?: Prisma.SortOrder
+  latitude?: Prisma.SortOrderInput | Prisma.SortOrder
+  longitude?: Prisma.SortOrderInput | Prisma.SortOrder
+  source?: Prisma.SortOrderInput | Prisma.SortOrder
+  sourceId?: Prisma.SortOrderInput | Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -369,8 +392,10 @@ export type MarketBranchScalarWhereWithAggregatesInput = {
   city?: Prisma.StringWithAggregatesFilter<"MarketBranch"> | string
   district?: Prisma.StringNullableWithAggregatesFilter<"MarketBranch"> | string | null
   neighborhoodId?: Prisma.IntNullableWithAggregatesFilter<"MarketBranch"> | number | null
-  latitude?: Prisma.FloatWithAggregatesFilter<"MarketBranch"> | number
-  longitude?: Prisma.FloatWithAggregatesFilter<"MarketBranch"> | number
+  latitude?: Prisma.FloatNullableWithAggregatesFilter<"MarketBranch"> | number | null
+  longitude?: Prisma.FloatNullableWithAggregatesFilter<"MarketBranch"> | number | null
+  source?: Prisma.StringNullableWithAggregatesFilter<"MarketBranch"> | string | null
+  sourceId?: Prisma.StringNullableWithAggregatesFilter<"MarketBranch"> | string | null
   isActive?: Prisma.BoolWithAggregatesFilter<"MarketBranch"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"MarketBranch"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"MarketBranch"> | Date | string
@@ -381,8 +406,10 @@ export type MarketBranchCreateInput = {
   address: string
   city: string
   district?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -401,8 +428,10 @@ export type MarketBranchUncheckedCreateInput = {
   city: string
   district?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -416,8 +445,10 @@ export type MarketBranchUpdateInput = {
   address?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -436,8 +467,10 @@ export type MarketBranchUncheckedUpdateInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -454,8 +487,10 @@ export type MarketBranchCreateManyInput = {
   city: string
   district?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -466,8 +501,10 @@ export type MarketBranchUpdateManyMutationInput = {
   address?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -481,8 +518,10 @@ export type MarketBranchUncheckedUpdateManyInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -498,6 +537,11 @@ export type MarketBranchOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
+export type MarketBranchSourceSourceIdCompoundUniqueInput = {
+  source: string
+  sourceId: string
+}
+
 export type MarketBranchCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   chainId?: Prisma.SortOrder
@@ -508,6 +552,8 @@ export type MarketBranchCountOrderByAggregateInput = {
   neighborhoodId?: Prisma.SortOrder
   latitude?: Prisma.SortOrder
   longitude?: Prisma.SortOrder
+  source?: Prisma.SortOrder
+  sourceId?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -531,6 +577,8 @@ export type MarketBranchMaxOrderByAggregateInput = {
   neighborhoodId?: Prisma.SortOrder
   latitude?: Prisma.SortOrder
   longitude?: Prisma.SortOrder
+  source?: Prisma.SortOrder
+  sourceId?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -546,6 +594,8 @@ export type MarketBranchMinOrderByAggregateInput = {
   neighborhoodId?: Prisma.SortOrder
   latitude?: Prisma.SortOrder
   longitude?: Prisma.SortOrder
+  source?: Prisma.SortOrder
+  sourceId?: Prisma.SortOrder
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -653,8 +703,8 @@ export type MarketBranchUncheckedUpdateManyWithoutChainNestedInput = {
   deleteMany?: Prisma.MarketBranchScalarWhereInput | Prisma.MarketBranchScalarWhereInput[]
 }
 
-export type FloatFieldUpdateOperationsInput = {
-  set?: number
+export type NullableFloatFieldUpdateOperationsInput = {
+  set?: number | null
   increment?: number
   decrement?: number
   multiply?: number
@@ -718,8 +768,10 @@ export type MarketBranchCreateWithoutNeighborhoodInput = {
   address: string
   city: string
   district?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -736,8 +788,10 @@ export type MarketBranchUncheckedCreateWithoutNeighborhoodInput = {
   address: string
   city: string
   district?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -783,8 +837,10 @@ export type MarketBranchScalarWhereInput = {
   city?: Prisma.StringFilter<"MarketBranch"> | string
   district?: Prisma.StringNullableFilter<"MarketBranch"> | string | null
   neighborhoodId?: Prisma.IntNullableFilter<"MarketBranch"> | number | null
-  latitude?: Prisma.FloatFilter<"MarketBranch"> | number
-  longitude?: Prisma.FloatFilter<"MarketBranch"> | number
+  latitude?: Prisma.FloatNullableFilter<"MarketBranch"> | number | null
+  longitude?: Prisma.FloatNullableFilter<"MarketBranch"> | number | null
+  source?: Prisma.StringNullableFilter<"MarketBranch"> | string | null
+  sourceId?: Prisma.StringNullableFilter<"MarketBranch"> | string | null
   isActive?: Prisma.BoolFilter<"MarketBranch"> | boolean
   createdAt?: Prisma.DateTimeFilter<"MarketBranch"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"MarketBranch"> | Date | string
@@ -795,8 +851,10 @@ export type MarketBranchCreateWithoutChainInput = {
   address: string
   city: string
   district?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -813,8 +871,10 @@ export type MarketBranchUncheckedCreateWithoutChainInput = {
   city: string
   district?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -854,8 +914,10 @@ export type MarketBranchCreateWithoutPricesInput = {
   address: string
   city: string
   district?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -873,8 +935,10 @@ export type MarketBranchUncheckedCreateWithoutPricesInput = {
   city: string
   district?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -903,8 +967,10 @@ export type MarketBranchUpdateWithoutPricesInput = {
   address?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -922,8 +988,10 @@ export type MarketBranchUncheckedUpdateWithoutPricesInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -936,8 +1004,10 @@ export type MarketBranchCreateWithoutCampaignsInput = {
   address: string
   city: string
   district?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -955,8 +1025,10 @@ export type MarketBranchUncheckedCreateWithoutCampaignsInput = {
   city: string
   district?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -985,8 +1057,10 @@ export type MarketBranchUpdateWithoutCampaignsInput = {
   address?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1004,8 +1078,10 @@ export type MarketBranchUncheckedUpdateWithoutCampaignsInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1018,8 +1094,10 @@ export type MarketBranchCreateWithoutPriceReportsInput = {
   address: string
   city: string
   district?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -1037,8 +1115,10 @@ export type MarketBranchUncheckedCreateWithoutPriceReportsInput = {
   city: string
   district?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -1067,8 +1147,10 @@ export type MarketBranchUpdateWithoutPriceReportsInput = {
   address?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1086,8 +1168,10 @@ export type MarketBranchUncheckedUpdateWithoutPriceReportsInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1102,8 +1186,10 @@ export type MarketBranchCreateManyNeighborhoodInput = {
   address: string
   city: string
   district?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -1114,8 +1200,10 @@ export type MarketBranchUpdateWithoutNeighborhoodInput = {
   address?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1132,8 +1220,10 @@ export type MarketBranchUncheckedUpdateWithoutNeighborhoodInput = {
   address?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1149,8 +1239,10 @@ export type MarketBranchUncheckedUpdateManyWithoutNeighborhoodInput = {
   address?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1163,8 +1255,10 @@ export type MarketBranchCreateManyChainInput = {
   city: string
   district?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
+  source?: string | null
+  sourceId?: string | null
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -1175,8 +1269,10 @@ export type MarketBranchUpdateWithoutChainInput = {
   address?: Prisma.StringFieldUpdateOperationsInput | string
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1193,8 +1289,10 @@ export type MarketBranchUncheckedUpdateWithoutChainInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1210,8 +1308,10 @@ export type MarketBranchUncheckedUpdateManyWithoutChainInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  source?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  sourceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1276,6 +1376,8 @@ export type MarketBranchSelect<ExtArgs extends runtime.Types.Extensions.Internal
   neighborhoodId?: boolean
   latitude?: boolean
   longitude?: boolean
+  source?: boolean
+  sourceId?: boolean
   isActive?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -1297,6 +1399,8 @@ export type MarketBranchSelectCreateManyAndReturn<ExtArgs extends runtime.Types.
   neighborhoodId?: boolean
   latitude?: boolean
   longitude?: boolean
+  source?: boolean
+  sourceId?: boolean
   isActive?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -1314,6 +1418,8 @@ export type MarketBranchSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.
   neighborhoodId?: boolean
   latitude?: boolean
   longitude?: boolean
+  source?: boolean
+  sourceId?: boolean
   isActive?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -1331,12 +1437,14 @@ export type MarketBranchSelectScalar = {
   neighborhoodId?: boolean
   latitude?: boolean
   longitude?: boolean
+  source?: boolean
+  sourceId?: boolean
   isActive?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type MarketBranchOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "chainId" | "name" | "address" | "city" | "district" | "neighborhoodId" | "latitude" | "longitude" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["marketBranch"]>
+export type MarketBranchOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "chainId" | "name" | "address" | "city" | "district" | "neighborhoodId" | "latitude" | "longitude" | "source" | "sourceId" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["marketBranch"]>
 export type MarketBranchInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   chain?: boolean | Prisma.MarketChainDefaultArgs<ExtArgs>
   neighborhood?: boolean | Prisma.MarketBranch$neighborhoodArgs<ExtArgs>
@@ -1371,8 +1479,10 @@ export type $MarketBranchPayload<ExtArgs extends runtime.Types.Extensions.Intern
     city: string
     district: string | null
     neighborhoodId: number | null
-    latitude: number
-    longitude: number
+    latitude: number | null
+    longitude: number | null
+    source: string | null
+    sourceId: string | null
     isActive: boolean
     createdAt: Date
     updatedAt: Date
@@ -1813,6 +1923,8 @@ export interface MarketBranchFieldRefs {
   readonly neighborhoodId: Prisma.FieldRef<"MarketBranch", 'Int'>
   readonly latitude: Prisma.FieldRef<"MarketBranch", 'Float'>
   readonly longitude: Prisma.FieldRef<"MarketBranch", 'Float'>
+  readonly source: Prisma.FieldRef<"MarketBranch", 'String'>
+  readonly sourceId: Prisma.FieldRef<"MarketBranch", 'String'>
   readonly isActive: Prisma.FieldRef<"MarketBranch", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"MarketBranch", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"MarketBranch", 'DateTime'>

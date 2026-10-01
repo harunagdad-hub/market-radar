@@ -58,6 +58,7 @@ export const ModelName = {
   MarketBranch: 'MarketBranch',
   Product: 'Product',
   Price: 'Price',
+  ProductListing: 'ProductListing',
   Campaign: 'Campaign',
   User: 'User',
   Address: 'Address',
@@ -137,6 +138,8 @@ export const MarketBranchScalarFieldEnum = {
   neighborhoodId: 'neighborhoodId',
   latitude: 'latitude',
   longitude: 'longitude',
+  source: 'source',
+  sourceId: 'sourceId',
   isActive: 'isActive',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -155,7 +158,8 @@ export const ProductScalarFieldEnum = {
   imageUrl: 'imageUrl',
   isActive: 'isActive',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  externalId: 'externalId'
 } as const
 
 export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
@@ -163,7 +167,7 @@ export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeo
 
 export const PriceScalarFieldEnum = {
   id: 'id',
-  productId: 'productId',
+  listingId: 'listingId',
   branchId: 'branchId',
   price: 'price',
   oldPrice: 'oldPrice',
@@ -174,6 +178,22 @@ export const PriceScalarFieldEnum = {
 } as const
 
 export type PriceScalarFieldEnum = (typeof PriceScalarFieldEnum)[keyof typeof PriceScalarFieldEnum]
+
+
+export const ProductListingScalarFieldEnum = {
+  id: 'id',
+  chainId: 'chainId',
+  sourceSku: 'sourceSku',
+  name: 'name',
+  brand: 'brand',
+  unit: 'unit',
+  imageUrl: 'imageUrl',
+  productId: 'productId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProductListingScalarFieldEnum = (typeof ProductListingScalarFieldEnum)[keyof typeof ProductListingScalarFieldEnum]
 
 
 export const CampaignScalarFieldEnum = {

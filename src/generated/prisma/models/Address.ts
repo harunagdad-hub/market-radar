@@ -246,8 +246,8 @@ export type AddressGroupByOutputType = {
   district: string | null
   neighborhood: string | null
   neighborhoodId: number | null
-  latitude: number
-  longitude: number
+  latitude: number | null
+  longitude: number | null
   createdAt: Date
   updatedAt: Date
   _count: AddressCountAggregateOutputType | null
@@ -284,8 +284,8 @@ export type AddressWhereInput = {
   district?: Prisma.StringNullableFilter<"Address"> | string | null
   neighborhood?: Prisma.StringNullableFilter<"Address"> | string | null
   neighborhoodId?: Prisma.IntNullableFilter<"Address"> | number | null
-  latitude?: Prisma.FloatFilter<"Address"> | number
-  longitude?: Prisma.FloatFilter<"Address"> | number
+  latitude?: Prisma.FloatNullableFilter<"Address"> | number | null
+  longitude?: Prisma.FloatNullableFilter<"Address"> | number | null
   createdAt?: Prisma.DateTimeFilter<"Address"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Address"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -301,8 +301,8 @@ export type AddressOrderByWithRelationInput = {
   district?: Prisma.SortOrderInput | Prisma.SortOrder
   neighborhood?: Prisma.SortOrderInput | Prisma.SortOrder
   neighborhoodId?: Prisma.SortOrderInput | Prisma.SortOrder
-  latitude?: Prisma.SortOrder
-  longitude?: Prisma.SortOrder
+  latitude?: Prisma.SortOrderInput | Prisma.SortOrder
+  longitude?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -321,8 +321,8 @@ export type AddressWhereUniqueInput = Prisma.AtLeast<{
   district?: Prisma.StringNullableFilter<"Address"> | string | null
   neighborhood?: Prisma.StringNullableFilter<"Address"> | string | null
   neighborhoodId?: Prisma.IntNullableFilter<"Address"> | number | null
-  latitude?: Prisma.FloatFilter<"Address"> | number
-  longitude?: Prisma.FloatFilter<"Address"> | number
+  latitude?: Prisma.FloatNullableFilter<"Address"> | number | null
+  longitude?: Prisma.FloatNullableFilter<"Address"> | number | null
   createdAt?: Prisma.DateTimeFilter<"Address"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Address"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -338,8 +338,8 @@ export type AddressOrderByWithAggregationInput = {
   district?: Prisma.SortOrderInput | Prisma.SortOrder
   neighborhood?: Prisma.SortOrderInput | Prisma.SortOrder
   neighborhoodId?: Prisma.SortOrderInput | Prisma.SortOrder
-  latitude?: Prisma.SortOrder
-  longitude?: Prisma.SortOrder
+  latitude?: Prisma.SortOrderInput | Prisma.SortOrder
+  longitude?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.AddressCountOrderByAggregateInput
@@ -361,8 +361,8 @@ export type AddressScalarWhereWithAggregatesInput = {
   district?: Prisma.StringNullableWithAggregatesFilter<"Address"> | string | null
   neighborhood?: Prisma.StringNullableWithAggregatesFilter<"Address"> | string | null
   neighborhoodId?: Prisma.IntNullableWithAggregatesFilter<"Address"> | number | null
-  latitude?: Prisma.FloatWithAggregatesFilter<"Address"> | number
-  longitude?: Prisma.FloatWithAggregatesFilter<"Address"> | number
+  latitude?: Prisma.FloatNullableWithAggregatesFilter<"Address"> | number | null
+  longitude?: Prisma.FloatNullableWithAggregatesFilter<"Address"> | number | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Address"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Address"> | Date | string
 }
@@ -373,8 +373,8 @@ export type AddressCreateInput = {
   city: string
   district?: string | null
   neighborhood?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutAddressesInput
@@ -390,8 +390,8 @@ export type AddressUncheckedCreateInput = {
   district?: string | null
   neighborhood?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -402,8 +402,8 @@ export type AddressUpdateInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutAddressesNestedInput
@@ -419,8 +419,8 @@ export type AddressUncheckedUpdateInput = {
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -434,8 +434,8 @@ export type AddressCreateManyInput = {
   district?: string | null
   neighborhood?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -446,8 +446,8 @@ export type AddressUpdateManyMutationInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -461,8 +461,8 @@ export type AddressUncheckedUpdateManyInput = {
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -628,8 +628,8 @@ export type AddressCreateWithoutLocationInput = {
   city: string
   district?: string | null
   neighborhood?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutAddressesInput
@@ -643,8 +643,8 @@ export type AddressUncheckedCreateWithoutLocationInput = {
   city: string
   district?: string | null
   neighborhood?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -687,8 +687,8 @@ export type AddressScalarWhereInput = {
   district?: Prisma.StringNullableFilter<"Address"> | string | null
   neighborhood?: Prisma.StringNullableFilter<"Address"> | string | null
   neighborhoodId?: Prisma.IntNullableFilter<"Address"> | number | null
-  latitude?: Prisma.FloatFilter<"Address"> | number
-  longitude?: Prisma.FloatFilter<"Address"> | number
+  latitude?: Prisma.FloatNullableFilter<"Address"> | number | null
+  longitude?: Prisma.FloatNullableFilter<"Address"> | number | null
   createdAt?: Prisma.DateTimeFilter<"Address"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Address"> | Date | string
 }
@@ -699,8 +699,8 @@ export type AddressCreateWithoutUserInput = {
   city: string
   district?: string | null
   neighborhood?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   location?: Prisma.NeighborhoodCreateNestedOneWithoutAddressesInput
@@ -714,8 +714,8 @@ export type AddressUncheckedCreateWithoutUserInput = {
   district?: string | null
   neighborhood?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -754,8 +754,8 @@ export type AddressCreateManyLocationInput = {
   city: string
   district?: string | null
   neighborhood?: string | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -766,8 +766,8 @@ export type AddressUpdateWithoutLocationInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutAddressesNestedInput
@@ -781,8 +781,8 @@ export type AddressUncheckedUpdateWithoutLocationInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -795,8 +795,8 @@ export type AddressUncheckedUpdateManyWithoutLocationInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -809,8 +809,8 @@ export type AddressCreateManyUserInput = {
   district?: string | null
   neighborhood?: string | null
   neighborhoodId?: number | null
-  latitude: number
-  longitude: number
+  latitude?: number | null
+  longitude?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -821,8 +821,8 @@ export type AddressUpdateWithoutUserInput = {
   city?: Prisma.StringFieldUpdateOperationsInput | string
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   location?: Prisma.NeighborhoodUpdateOneWithoutAddressesNestedInput
@@ -836,8 +836,8 @@ export type AddressUncheckedUpdateWithoutUserInput = {
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -850,8 +850,8 @@ export type AddressUncheckedUpdateManyWithoutUserInput = {
   district?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   neighborhoodId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  latitude?: Prisma.FloatFieldUpdateOperationsInput | number
-  longitude?: Prisma.FloatFieldUpdateOperationsInput | number
+  latitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  longitude?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -953,8 +953,8 @@ export type $AddressPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     district: string | null
     neighborhood: string | null
     neighborhoodId: number | null
-    latitude: number
-    longitude: number
+    latitude: number | null
+    longitude: number | null
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["address"]>
